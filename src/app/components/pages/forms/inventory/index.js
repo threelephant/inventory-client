@@ -1,127 +1,57 @@
-import React from 'react'
-import { Form, FormGroup, Label, Input, Row, Col, Button, ButtonGroup } from 'reactstrap'
+import React, { useState } from 'react'
+import { Form, Row, Col } from 'reactstrap'
 import Operation from './operations'
 import Number from './number'
+import { PlaceGroupFrom, PlaceGroupTo } from './placeform'
+import ButtonForm from './buttons'
+import { Movement, MovementInfo } from './movement'
+import { Name, Barcode, Description } from './textelements'
 
-const Name = () => {
-  return (
-    <FormGroup>
-      <Label>Название</Label>
-      <Input></Input>
-    </FormGroup>
-  )
-}
-
-const Barcode = () => {
-  return (
-    <FormGroup>
-      <Label>Штрих-код</Label>
-      <Input></Input>
-    </FormGroup>
-  )
-}
-
-const Division = () => {
-  return (
-    <FormGroup>
-      <Label>Отдел</Label>
-      <Input></Input>
-    </FormGroup>
-  )
-}
-
-const Placement = () => {
-  return (
-    <FormGroup>
-      <Label>Помещение</Label>
-      <Input></Input>
-    </FormGroup>
-  )
-}
-
-const PlaceGroupFrom = () => {
+const InventoryFormBody = (props) => {
   return (
     <div>
-      <Label>Откуда</Label>
-      <Row noGutters>
-        <Col>
-          <Division />
-        </Col>
-        <Col>
-          <Placement />
-        </Col>
-      </Row>
-    </div>
-  )
-}
-
-const PlaceGroupTo = () => {
-  return (
-    <div>
-      <Label>Куда</Label>
-      <Row noGutters>
-        <Col>
-          <Division />
-        </Col>
-        <Col>
-          <Placement />
-        </Col>
-      </Row>
-    </div>
-  )
-}
-
-const Description = () => {
-  return (
-    <FormGroup>
-      <Label>Описание объекта</Label>
-      <Input type="textarea"></Input>
-    </FormGroup>
-  )
-}
-
-const Movement = () => {
-  return (
-    <FormGroup>
-      <Label>Описание последнего движения объекта</Label>
-      <Input type="textarea"></Input>
-    </FormGroup>
-  )
-}
-
-const MovementInfo = () => {
-  return (
-    <FormGroup>
-      <Label>Доп. инфо последнего движения объекта</Label>
-      <Input type="textarea"></Input>
-    </FormGroup>
-  )
-}
-
-const ButtonFormGroup = () => {
-  return (
-    <div className="d-flex justify-content-between">
-      <Button color="primary">Выполнить операцию</Button>
-      <Button outline color="danger">Очистить</Button>
-    </div>
-  )
-}
-
-const InventoryFormBody = () => {
-  return (
-    <Form>
-      <Number />
-      <Name />
-      <Operation />
-      <PlaceGroupTo />
+      <Number onChange={props.number} />
+      <Name onChange={props.object} />
+      <Operation onChange={props.operation} />
       <PlaceGroupFrom />
+      <PlaceGroupTo />
       <Barcode />
       <Description />
       <Movement />
       <MovementInfo />
-      <ButtonFormGroup />
+    </div>
+  )
+}
+
+const InventoryForm = () => {
+  const [ objectId, setObjectId ] = useState('')
+  const [ name, setName ] = useState('')
+  const [ operation, setOperation ] = useState('') 
+
+  const handleSubmitClick = () => {
+    console.log('clicked')
+  }
+
+  const setNumber = (event) => setObjectId(event.target.value)
+  const setObjectName = (event) => setName(event.target.value)
+  const setOp = (event) => setOperation(event.target.value)
+
+  return (
+    <Form>
+      <Row sm="1" md="2">
+        <Col sm="12" md={{ size: 5, offset: 1 }}>
+          <InventoryFormBody 
+            number={setNumber}
+            object={setObjectName}
+            operation={setOp}
+          />
+        </Col>
+        <Col md={{ size: 2, offset: 1 }}>
+          <ButtonForm onClick={handleSubmitClick} />
+        </Col>
+      </Row>
     </Form>
   )
 }
 
-export default InventoryFormBody
+export default InventoryForm

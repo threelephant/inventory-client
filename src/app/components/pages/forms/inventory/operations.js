@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { Spinner, Input, Label, FormGroup } from 'reactstrap'
 import services from '../../../../services/services'
 
-const Loading = () => <div><br /><Spinner></Spinner></div>
+const Loading = () => <div><Spinner></Spinner></div>
 
-const OperationsOptions = ({ operationsList }) => 
-  <Input type="select">{operationsList}</Input>
+const OperationsOptions = ({ operationsList, onChange }) => 
+  <Input type="select" onChange={onChange}>{operationsList}</Input>
 
-const Operation = () => {
+const Operation = (props) => {
   const [ operationsList, setOperationsList ] = useState([])
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Operation = () => {
   }, [])
 
   let operationElement = operationsList.length === 0 ? <Loading /> :
-    <OperationsOptions operationsList={operationsList} />
+    <OperationsOptions onChange={props.onChange} operationsList={operationsList} />
 
   return (
     <FormGroup>

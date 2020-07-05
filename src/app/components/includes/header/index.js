@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Collapse, Nav, NavLink, Navbar, NavbarToggler,
    NavbarBrand, NavItem, UncontrolledDropdown, DropdownToggle,
-  DropdownMenu, DropdownItem, Col, Row } from 'reactstrap'
+  DropdownMenu, DropdownItem } from 'reactstrap'
 
 const NavbarLinks = () => {
   return (
@@ -23,7 +23,7 @@ const DropdownReports = () => {
       <DropdownToggle nav caret>
       Отчеты
       </DropdownToggle>
-      <DropdownMenu left>
+      <DropdownMenu direction="left">
         <DropdownItem href="/">
           Отчет по остаткам
         </DropdownItem>

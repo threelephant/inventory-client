@@ -1,0 +1,9 @@
+.buttons {
+  position: fixed;
+}
+
+@media (max-width: 768px) { 
+  .buttons {
+    position: absolute !important;
+  }
+}

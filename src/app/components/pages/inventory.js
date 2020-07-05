@@ -3,16 +3,6 @@ import { Container, Row, Col } from 'reactstrap'
 import Header from '../includes/header'
 import InventoryForm from './forms/inventory'
 
-const InventoryFormTemplate = () => {
-  return (
-    <Row>
-      <Col sm="12" md={{ size: 5, offset: 1 }}>
-        <InventoryForm />
-      </Col>
-    </Row>
-  )
-}
-
 const InventoryTitle = () => {
   return (
     <Row>
@@ -27,7 +17,7 @@ const InventoryPage = () => {
   return (
     <div>
       <InventoryTitle />
-      <InventoryFormTemplate />
+      <InventoryForm />
     </div>
   )
 }
@@ -40,7 +30,7 @@ const Inventory = () => {
   return (
     <div>
       <Header />
-      <Container fluid className="pl-0 mb-5">
+      <Container fluid className="mb-5">
         <InventoryPage />
       </Container>
     </div>
