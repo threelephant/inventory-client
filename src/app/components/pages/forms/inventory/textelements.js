@@ -7,25 +7,25 @@ const Name = ({ onChange }) => {
   return (
     <FormGroup>
       <Label>Название</Label>
-      <Input onChange={onChange}></Input>
+      <Input name="name" onChange={onChange}></Input>
     </FormGroup>
   )
 }
 
-const Barcode = () => {
+const Barcode = ({ onChange }) => {
   return (
     <FormGroup>
       <Label>Штрих-код</Label>
-      <Input></Input>
+      <Input name="barcode" onChange={onChange} />
     </FormGroup>
   )
 }
 
-const Description = () => {
+const Description = ({ onChange }) => {
   return (
     <FormGroup>
       <Label>Описание объекта</Label>
-      <Input type="textarea"></Input>
+      <Input name="description" type="textarea" onChange={onChange}></Input>
     </FormGroup>
   )
 }

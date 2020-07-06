@@ -4,7 +4,7 @@ import FormLogin from './forms/login'
 import FormRegister from './forms/register'
 
 const Auth = ({ type }) => {
-  let form;
+  let form
   if (type === 'login') {
     form = <FormLogin />;
   } else if (type === 'register') {

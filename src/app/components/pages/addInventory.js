@@ -7,7 +7,7 @@ const InventoryTitle = () => {
   return (
     <Row>
       <Col sm="12" md={{ size: 6, offset: 1 }} className="mb-4">
-        <h2>Изменение инвертарных карточек</h2>
+        <h2>Добавление инвертарных карточек</h2>
       </Col>
     </Row>
   )
@@ -24,7 +24,7 @@ const InventoryPage = () => {
 
 const Inventory = () => {
   useEffect(() => {
-    document.title = "Изменение инвертарных карточек"
+    document.title = "Добавление инвертарных карточек"
   }, [])
 
   return (

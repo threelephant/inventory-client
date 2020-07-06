@@ -7,5 +7,16 @@
     "Передано в ремонт",
     "Ввод остатков",
     "Сторно"
-  ]
+  ],
+  "object": {
+    "operation": "Приход",
+    "object_id": "857346586",
+    "name": "hdgldhfeh",
+    "division": "kwjfhwehflwei",
+    "placement": "jflkfe",
+    "barcode": "5234273463",
+    "description": "wefhwef",
+    "movement": "kjfewfj",
+    "movement_info": "kjwebf"
+  }
 }

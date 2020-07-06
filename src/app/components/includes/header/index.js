@@ -1,37 +1,21 @@
 import React, { useState } from 'react'
-import { Collapse, Nav, NavLink, Navbar, NavbarToggler,
-   NavbarBrand, NavItem, UncontrolledDropdown, DropdownToggle,
-  DropdownMenu, DropdownItem } from 'reactstrap'
+import {
+  Collapse, Nav, Navbar, NavbarToggler,
+  NavbarBrand
+} from 'reactstrap'
+import {
+  DropdownPlace, DropdownInventory,
+  DropdownReports, DropdownSearch
+} from './dropdowns'
 
 const NavbarLinks = () => {
   return (
     <Nav className="mr-auto" navbar>
-      <NavItem>
-        <NavLink href="/inventory/">Изменение инвертарных карточек</NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink href="/object">Поиск материальных объектов</NavLink>
-      </NavItem>
+      <DropdownInventory />
       <DropdownReports />
+      <DropdownSearch />
+      <DropdownPlace />
     </Nav>
-  )
-}
-
-const DropdownReports = () => {
-  return (
-    <UncontrolledDropdown nav inNavbar>
-      <DropdownToggle nav caret>
-      Отчеты
-      </DropdownToggle>
-      <DropdownMenu direction="left">
-        <DropdownItem href="/">
-          Отчет по остаткам
-        </DropdownItem>
-        <DropdownItem href="/">
-          Отчет по движениям
-        </DropdownItem>
-      </DropdownMenu>
-    </UncontrolledDropdown>
   )
 }
 
@@ -52,7 +36,7 @@ const NavBody = () => {
 const Header = () => {
   return (
     <Navbar color="dark" dark expand="md" className="mb-4">
-      <NavbarBrand href="/">Инвентаризация</NavbarBrand>
+      <NavbarBrand href="/">Inventory System</NavbarBrand>
       <NavBody />
     </Navbar>
   )
