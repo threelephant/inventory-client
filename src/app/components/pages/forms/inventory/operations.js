@@ -4,21 +4,21 @@ import services from '../../../../services/operations'
 
 const Loading = () => <div><Spinner /></div>
 
-const OperationsOptions = ({ operationsList, onChange }) => 
+const OperationsOptions = ({ operationsList, onChange }) =>
   <Input type="select" name="operation" onChange={onChange}>{operationsList}</Input>
 
 const Operation = (props) => {
-  const [ operationsList, setOperationsList ] = useState([])
+  const [operationsList, setOperationsList] = useState([])
 
   useEffect(() => {
     services
       .getAll()
-        .then(operations => {
-          const operationListOptions = operations.map((operation, key) => 
-            <option key={key}>{operation}</option>
-          )
-          setOperationsList(operationListOptions)
-        })
+      .then(operations => {
+        const operationListOptions = operations.map((operation, key) =>
+          <option key={key}>{operation}</option>
+        )
+        setOperationsList(operationListOptions)
+      })
   }, [])
 
   let operationElement = operationsList.length === 0 ? <Loading /> :

@@ -11,4 +11,5 @@ const Number = ({ onChange }) => {
     </FormGroup>
   )
 }
+
 export default Number

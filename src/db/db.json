@@ -18,5 +18,29 @@
     "description": "wefhwef",
     "movement": "kjfewfj",
     "movement_info": "kjwebf"
-  }
+  },
+  "division": [
+    "Архив",
+    "АСУП",
+    "АХО",
+    "БИОКАД",
+    "БКС",
+    "БОТ",
+    "Бухгалтерия"
+  ],
+  "placement": {
+    "Архив": [
+      "asdasd",
+      "asdasdasd",
+      "asdasd"
+    ],
+    "АСУП": [
+      "fsdfsd",
+      "asdasd"
+    ]
+  },
+  "ууаыф": [
+    "asd",
+    "adasd"
+  ]
 }
