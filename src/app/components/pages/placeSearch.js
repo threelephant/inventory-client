@@ -13,21 +13,27 @@ const Title = () => {
   )
 }
 
-const Page = () => {
+const Page = (props) => {
   return (
     <div>
       <Title />
-      <PlaceSearchForm />
+      <PlaceSearchForm 
+        setSelectedDivision={props.setSelectedDivision}
+        setSelectedPlacement={props.setSelectedPlacement}
+      />
     </div>
   )
 }
 
-const placeSearch = () => {
+const placeSearch = (props) => {
   return (
     <div>
       <Header />
       <Container fluid className="mb-5">
-        <Page />
+        <Page 
+          setSelectedDivision={props.setSelectedDivision} 
+          setSelectedPlacement={props.setSelectedPlacement}
+        />
       </Container>
     </div>
   )

@@ -13,16 +13,19 @@ const InventoryTitle = () => {
   )
 }
 
-const InventoryPage = () => {
+const InventoryPage = (props) => {
   return (
     <div>
       <InventoryTitle />
-      <InventoryForm />
+      <InventoryForm
+        division={props.selectedDivision}
+        placement={props.selectedPlacement} 
+      />
     </div>
   )
 }
 
-const Inventory = () => {
+const Inventory = (props) => {
   useEffect(() => {
     document.title = "Добавление инвертарных карточек"
   }, [])
@@ -31,7 +34,10 @@ const Inventory = () => {
     <div>
       <Header />
       <Container fluid className="mb-5">
-        <InventoryPage />
+        <InventoryPage 
+          division={props.selectedDivision}
+          placement={props.selectedPlacement}
+        />
       </Container>
     </div>
   )

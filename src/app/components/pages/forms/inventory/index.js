@@ -28,10 +28,9 @@ const InventoryFormBody = (props) => {
   )
 }
 
-const InventoryForm = () => {
+const InventoryForm = (props) => {
   const [item, setItem] = useState({ operation: "Приход" })
   const [success, setSuccess] = useState(-1)
-  const [valid, setValid] = useState(false)
   const [errorMessage, setErrorMessage] = useState([])
 
   const handleChange = e => {
@@ -55,11 +54,8 @@ const InventoryForm = () => {
 
     if (error.length !== 0) {
       setErrorMessage(error)
-      setValid(false)
       return
     }
-
-    setValid(true)
 
     inventoryService
       .create(item)
@@ -76,8 +72,6 @@ const InventoryForm = () => {
         }, 4000)
       })
   }
-
-  console.log(valid, item)
 
   return (
     <Form>

@@ -1,0 +1,5 @@
+{
+  "/api/*": "/$1",
+  "/placement/:category": "/placement?category=:category",
+  "/division/english": "/division_english"
+}

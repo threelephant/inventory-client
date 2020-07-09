@@ -10,14 +10,14 @@
   ],
   "object": {
     "operation": "Приход",
-    "object_id": "857346586",
-    "name": "hdgldhfeh",
-    "division": "kwjfhwehflwei",
-    "placement": "jflkfe",
-    "barcode": "5234273463",
-    "description": "wefhwef",
-    "movement": "kjfewfj",
-    "movement_info": "kjwebf"
+    "barcode": "4645353",
+    "object_id": "5456456456",
+    "name": "орипаем",
+    "division": "6п7е657к56",
+    "placement": "к7к564",
+    "description": "сеесвев",
+    "movement": "евев",
+    "movement_info": "вечвые"
   },
   "division": [
     "Архив",
@@ -28,19 +28,71 @@
     "БОТ",
     "Бухгалтерия"
   ],
-  "placement": {
-    "Архив": [
-      "asdasd",
-      "asdasdasd",
-      "asdasd"
-    ],
-    "АСУП": [
-      "fsdfsd",
-      "asdasd"
-    ]
-  },
-  "ууаыф": [
-    "asd",
-    "adasd"
-  ]
+  "placement": [
+    {
+      "category": "archive",
+      "array": [
+        "Архив 1",
+        "Архив 2"
+      ]
+    },
+    {
+      "category": "asup",
+      "array": [
+        "АСУП 1",
+        "АСУП 2",
+        "АСУП 3",
+        "АСУП 4"
+      ]
+    },
+    {
+      "category": "akho",
+      "array": [
+        "АХО 101"
+      ]
+    },
+    {
+      "category": "biocad",
+      "array": [
+        "БИОКАД 1",
+        "БИОКАД 2",
+        "БИОКАД 3"
+      ]
+    },
+    {
+      "category": "bks",
+      "array": [
+        "БКС 1",
+        "БКС 2",
+        "БКС 3"
+      ]
+    },
+    {
+      "category": "bot",
+      "array": [
+        "БОТ 1",
+        "БОТ 2",
+        "БОТ 3"
+      ]
+    },
+    {
+      "category": "bookeeping",
+      "array": [
+        "Бух 1",
+        "Бух 2",
+        "Бух 3",
+        "Бух 4",
+        "Бух 5"
+      ]
+    }
+  ],
+  "division_english": {
+    "Архив": "archive",
+    "АСУП": "asup",
+    "АХО": "akho",
+    "БИОКАД": "biocad",
+    "БКС": "bks",
+    "БОТ": "bot",
+    "Бухгалтерия": "bookeeping"
+  }
 }

@@ -23,13 +23,13 @@ const PlaceGroupFrom = ({ onChangeDivision, onChangePlacement }) => {
         </Col>
       </Row>
       <Row>
-        <Button>Выбрать</Button>
+        <Button href="/place/search">Выбрать</Button>
       </Row>
     </div>
   )
 }
 
-const PlaceGroupTo = ({ onChangeDivision, onChangePlacement }) => {
+const PlaceGroupTo = (props) => {
   return (
     <div>
       <Label>Куда</Label>
@@ -37,18 +37,18 @@ const PlaceGroupTo = ({ onChangeDivision, onChangePlacement }) => {
         <Col>
           <FormGroup>
             <Label>Отдел</Label>
-            <Input name="division" onChange={onChangeDivision}></Input>
+            <Input name="division" onChange={props.onChangeDivision}></Input>
           </FormGroup>
         </Col>
         <Col>
           <FormGroup>
             <Label>Помещение</Label>
-            <Input name="placement" onChange={onChangePlacement}></Input>
+            <Input name="placement" onChange={props.onChangePlacement}></Input>
           </FormGroup>
         </Col>
       </Row>
       <Row noGutters className="mb-3">
-        <Button href="/">Выбрать</Button>
+        <Button href="/place/search">Выбрать</Button>
       </Row>
     </div>
   )

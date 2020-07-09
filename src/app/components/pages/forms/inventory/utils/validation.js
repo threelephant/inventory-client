@@ -13,7 +13,6 @@ const isValid = (item) => {
   if (item.barcode 
     && !(item.barcode == parseInt(item.barcode))) {
       messages.push('Заполните штрих-код в правильном формате')
-
   }
 
   if (item.division === "" || item.division === undefined) {
