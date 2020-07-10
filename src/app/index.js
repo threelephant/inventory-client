@@ -5,24 +5,16 @@ import AddInventory from './components/pages/addInventory'
 import PlaceSearch from './components/pages/placeSearch'
 
 const SearchPage = () => {
-  const [selectedDivision, setSelectedDivision] = useState('')
-  const [selectedPlacement, setSelectedPlacement] = useState('')
 
   return (
     <div>
-      <Route 
-        path="/inventory/add" 
-        render={() => <AddInventory
-                       selectedDivision={selectedDivision}
-                       selectedPlacement={selectedPlacement} 
-                      />} 
+      <Route
+        path="/inventory/add"
+        render={() => <AddInventory />}
       />
       <Route
         path="/place/search"
-        render={() => <PlaceSearch 
-                        setSelectedDivision={setSelectedDivision}
-                        setSelectedPlacement={setSelectedPlacement}
-                      />}
+        render={() => <PlaceSearch />}
       />
     </div>
   )

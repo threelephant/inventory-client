@@ -6,6 +6,7 @@ import ButtonForm from './buttons/buttons'
 import { Movement, MovementInfo } from './movement'
 import { Name, Barcode, Description } from './textelements'
 import isValid from './utils/validation'
+import PlaceForm from '../placeSearch'
 import inventoryService from '../../../../services/inventory'
 
 const InventoryFormBody = (props) => {
@@ -14,10 +15,7 @@ const InventoryFormBody = (props) => {
       <Number onChange={props.number} />
       <Name onChange={props.name} />
       <hr />
-      <PlaceGroupTo
-        onChangeDivision={props.divTo}
-        onChangePlacement={props.placeTo}
-      />
+      <PlaceForm />
       <hr />
       <Barcode onChange={props.barcode} />
       <Description onChange={props.desc} />
@@ -28,7 +26,7 @@ const InventoryFormBody = (props) => {
   )
 }
 
-const InventoryForm = (props) => {
+const InventoryForm = () => {
   const [item, setItem] = useState({ operation: "Приход" })
   const [success, setSuccess] = useState(-1)
   const [errorMessage, setErrorMessage] = useState([])

@@ -4,7 +4,7 @@ import services from '../../../../services/division'
 import { Division, Placement } from './placeInputs'
 import { DivisionTable, PlacementTable } from './tables/tables'
 
-const PlaceSearchForm = (props) => {
+const PlaceSearchForm = () => {
   const [divisions, setDivisions] = useState([])
   const [chosenDivision, setChosenDivision] = useState('')
   const [chosenPlacement, setChosenPlacement] = useState('')
@@ -42,12 +42,6 @@ const PlaceSearchForm = (props) => {
     setPlacementSearch(event.target.value.toLowerCase())
   }
 
-  const onClick = (e) => {
-    e.preventDefault()
-    props.setSelectedDivision(chosenDivision)
-    props.setSelectedPlacement(chosenPlacement)
-  }
-
   return (
     <Form>
       <Row sm="1" md="2">
@@ -55,12 +49,6 @@ const PlaceSearchForm = (props) => {
           sm={{ order: 2, size: 12 }}
           md={{ order: 1, size: 4, offset: 1 }}
         >
-          <Button
-            className="mb-3"
-            onClick={onClick}
-          >
-            Выбрать
-          </Button>
           <DivisionTable
             divisions={divisions}
             setDivision={setDivision}

@@ -17,10 +17,7 @@ const InventoryPage = (props) => {
   return (
     <div>
       <InventoryTitle />
-      <InventoryForm
-        division={props.selectedDivision}
-        placement={props.selectedPlacement} 
-      />
+      <InventoryForm />
     </div>
   )
 }
@@ -34,10 +31,7 @@ const Inventory = (props) => {
     <div>
       <Header />
       <Container fluid className="mb-5">
-        <InventoryPage 
-          division={props.selectedDivision}
-          placement={props.selectedPlacement}
-        />
+        <InventoryPage />
       </Container>
     </div>
   )
