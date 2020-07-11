@@ -2,21 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { Table } from 'reactstrap'
 import styles from './table.module.css'
 import servicesPlacement from '../../../../../../services/placement'
+import resetTables from '../../utils/resetTables'
 
 const style = styles.row_selected
 
 const DivisionTable = (props) => {
   const setDivision = (division, key) => {
-    const elemsDivision = document.querySelectorAll('#division_table tr')
-    const elemsPlacement = document.querySelectorAll('#placement_division tr')
-    
-    elemsDivision.forEach(elem => {
-      elem.classList.remove(style)
-    })
-
-    elemsPlacement.forEach(elem => {
-      elem.classList.remove(style)
-    })
+    resetTables()
     
     const selectedElem = document.getElementById(`division${key}`)
     selectedElem.classList.add(style)
@@ -53,7 +45,7 @@ const PlacementTable = (props) => {
   const [ placements, setPlacements ] = useState([])
 
   const setPlace = (placement, key) => {
-    const elems = document.querySelectorAll('#placement_division tr')
+    const elems = document.querySelectorAll('#placement_table tr')
     elems.forEach(elem => {
       elem.classList.remove(style)
     })
@@ -84,7 +76,7 @@ const PlacementTable = (props) => {
   }, [props.division])
 
   return (
-    <Table id="placement_division" hover bordered size="sm">
+    <Table id="placement_table" hover bordered size="sm">
       <thead>
         <tr>
           <th>Помещение</th>

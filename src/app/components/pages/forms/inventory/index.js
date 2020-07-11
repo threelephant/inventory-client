@@ -4,6 +4,7 @@ import Number from './number'
 import ButtonForm from './buttons/buttons'
 import { Movement, MovementInfo } from './movement'
 import { Name, Barcode, Description } from './textelements'
+import resetTables from './utils/resetTables'
 import isValid from './utils/validation'
 import PlaceForm from './places'
 import inventoryService from '../../../../services/inventory'
@@ -14,9 +15,11 @@ const InventoryFormBody = (props) => {
       <Number onChange={props.number} />
       <Name onChange={props.name} />
       <hr />
-      <PlaceForm 
+      <PlaceForm
         setDiv={props.divTo}
         setPlace={props.placeTo}
+        chosenDivision={props.chosenDivision}
+        setChosenDivision={props.setChosenDivision}
       />
       <hr />
       <Barcode onChange={props.barcode} />
@@ -32,6 +35,7 @@ const InventoryForm = () => {
   const [item, setItem] = useState({ operation: "Приход" })
   const [success, setSuccess] = useState(-1)
   const [errorMessage, setErrorMessage] = useState([])
+  const [chosenDivision, setChosenDivision] = useState('')
 
   const handleChange = e => {
     const { name, value } = e.target
@@ -44,7 +48,9 @@ const InventoryForm = () => {
   const reset = () => {
     setItem({ operation: "Приход" })
     document.querySelector('form').reset()
+    resetTables()
     setErrorMessage([])
+    setChosenDivision('')
   }
 
   const handleSubmitClick = e => {
@@ -57,8 +63,13 @@ const InventoryForm = () => {
       return
     }
 
+    const newItem = {
+      ...item,
+      date: new Date()
+    }
+
     inventoryService
-      .create(item)
+      .create(newItem)
       .then(response => {
         setSuccess(1)
         reset()
@@ -73,8 +84,6 @@ const InventoryForm = () => {
       })
   }
 
-  console.log(item)
-
   return (
     <Form>
       <Row sm="1" md="2">
@@ -88,6 +97,8 @@ const InventoryForm = () => {
             desc={handleChange}
             move={handleChange}
             moveInfo={handleChange}
+            chosenDivision={chosenDivision}
+            setChosenDivision={setChosenDivision}
           />
         </Col>
         <Col md={{ size: 2, offset: 1 }}>

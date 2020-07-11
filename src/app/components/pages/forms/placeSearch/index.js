@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Form, Row, Col, Button } from 'reactstrap'
+import { Form, Row, Col } from 'reactstrap'
 import services from '../../../../services/division'
 import { Division, Placement } from './placeInputs'
 import { DivisionTable, PlacementTable } from './tables/tables'
@@ -7,7 +7,6 @@ import { DivisionTable, PlacementTable } from './tables/tables'
 const PlaceSearchForm = () => {
   const [divisions, setDivisions] = useState([])
   const [chosenDivision, setChosenDivision] = useState('')
-  const [chosenPlacement, setChosenPlacement] = useState('')
   const [divisionsEnglish, setDivisionsEnglish] = useState({})
   const [divisionSearch, setDivisionSearch] = useState('')
   const [placementSearch, setPlacementSearch] = useState('')
@@ -29,7 +28,6 @@ const PlaceSearchForm = () => {
   }, [])
 
   const setDivision = (division) => {
-    setChosenPlacement('')
     const divEnglish = divisionsEnglish[division]
     setChosenDivision(divEnglish)
   }
@@ -57,7 +55,6 @@ const PlaceSearchForm = () => {
           <PlacementTable
             division={chosenDivision}
             divisionsEnglish={divisionsEnglish}
-            setPlacement={setChosenPlacement}
             searched={placementSearch}
           />
         </Col>

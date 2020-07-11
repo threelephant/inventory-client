@@ -64,7 +64,6 @@ const PlacementTable = (props) => {
     
     const selectedElem = document.getElementById(`placement` + key)
     selectedElem.classList.add(style)
-    props.setPlacement(placement)
   }
 
   const filteredPlacements = placements.filter(placement => 

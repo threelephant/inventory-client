@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import { Row, Col } from 'reactstrap'
 import services from '../../../../../services/division'
 import { DivisionTable, PlacementTable } from './tables/tables'
-import division from '../../../../../services/division'
 
-const PlaceSearchForm = ({ setDiv, setPlace }) => {
+const PlaceSearchForm = ({ setDiv, setPlace, chosenDivision, setChosenDivision }) => {
   const [divisions, setDivisions] = useState([])
-  const [chosenDivision, setChosenDivision] = useState('')
-  const [chosenPlacement, setChosenPlacement] = useState('')
   const [divisionsEnglish, setDivisionsEnglish] = useState({})
 
   useEffect(() => {
@@ -26,10 +24,10 @@ const PlaceSearchForm = ({ setDiv, setPlace }) => {
   }, [])
 
   const setDivision = (division) => {
-    setChosenPlacement('')
     const divEnglish = divisionsEnglish[division]
     setChosenDivision(divEnglish)
-    setPlace(prevItem => 
+
+    setPlace(prevItem =>
       Object.keys(prevItem)
         .filter(key => key !== "placement")
         .reduce((result, current) => {
@@ -37,6 +35,7 @@ const PlaceSearchForm = ({ setDiv, setPlace }) => {
           return result
         }, {})
     )
+
     setDiv(prevItem => ({
       ...prevItem,
       "division": division
@@ -51,17 +50,21 @@ const PlaceSearchForm = ({ setDiv, setPlace }) => {
   }
 
   return (
-    <div>
-      <DivisionTable
-        divisions={divisions}
-        setDivision={setDivision}
-      />
-      <PlacementTable
-        division={chosenDivision}
-        divisionsEnglish={divisionsEnglish}
-        setPlacement={setPlacement}
-      />
-    </div>
+    <Row>
+      <Col>
+        <DivisionTable
+          divisions={divisions}
+          setDivision={setDivision}
+        />
+      </Col>
+      <Col>
+        <PlacementTable
+          division={chosenDivision}
+          divisionsEnglish={divisionsEnglish}
+          setPlacement={setPlacement}
+        />
+      </Col>
+    </Row>
   )
 }
 

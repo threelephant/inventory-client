@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+
 const isValid = (item) => {
   const messages = []
 
