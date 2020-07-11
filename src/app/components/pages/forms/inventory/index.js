@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import { Form, Row, Col } from 'reactstrap'
 import Number from './number'
-import { PlaceGroupTo } from './placeform'
 import ButtonForm from './buttons/buttons'
 import { Movement, MovementInfo } from './movement'
 import { Name, Barcode, Description } from './textelements'
 import isValid from './utils/validation'
-import PlaceForm from '../placeSearch'
+import PlaceForm from './places'
 import inventoryService from '../../../../services/inventory'
 
 const InventoryFormBody = (props) => {
@@ -15,7 +14,10 @@ const InventoryFormBody = (props) => {
       <Number onChange={props.number} />
       <Name onChange={props.name} />
       <hr />
-      <PlaceForm />
+      <PlaceForm 
+        setDiv={props.divTo}
+        setPlace={props.placeTo}
+      />
       <hr />
       <Barcode onChange={props.barcode} />
       <Description onChange={props.desc} />
@@ -71,6 +73,8 @@ const InventoryForm = () => {
       })
   }
 
+  console.log(item)
+
   return (
     <Form>
       <Row sm="1" md="2">
@@ -78,8 +82,8 @@ const InventoryForm = () => {
           <InventoryFormBody
             number={handleChange}
             name={handleChange}
-            divTo={handleChange}
-            placeTo={handleChange}
+            divTo={setItem}
+            placeTo={setItem}
             barcode={handleChange}
             desc={handleChange}
             move={handleChange}
