@@ -50,7 +50,7 @@ const DropdownInventory = () => {
         <DropdownItem href="/inventory/add">
           Добавление инвентарной карточки
         </DropdownItem>
-        <DropdownItem href="/">
+        <DropdownItem href="/inventory/change">
           Изменение инвентарной карточки
         </DropdownItem>
       </DropdownMenu>
