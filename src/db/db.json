@@ -1,6 +1,5 @@
 {
   "operations": [
-    "Приход",
     "Списание",
     "Инвентаризация",
     "Перемещение",
@@ -11,10 +10,10 @@
   "object": {
     "operation": "Приход",
     "division": "АХО",
-    "object_id": "5345",
-    "name": "wrwer",
     "placement": "АХО 101",
-    "date": "2020-07-14T13:34:09.100Z"
+    "object_id": "3534534",
+    "name": "etert",
+    "date": "2020-07-14T18:56:59.374Z"
   },
   "division": [
     "Архив",
@@ -91,5 +90,43 @@
     "БКС": "bks",
     "БОТ": "bot",
     "Бухгалтерия": "bookeeping"
-  }
+  },
+  "objects": [
+    {
+      "object_id": "000144", 
+      "name": "Монитор Samsung 2043nw",
+      "description": "ТП АБК",
+      "barcode": "0000000006651",
+      "operation": "Перемещение",
+      "division": "ТП",
+      "placement": "Цех ТП Общий",
+      "movement": "ТП АБК (Шабаловская И.К.)",
+      "movement_info": "tsk7-it-01",
+      "date": "2020-07-02T12:59:34"
+    },
+    {
+      "object_id": "000145", 
+      "name": "Монитор Гнусмус 2043nw",
+      "description": "ТП ТП АБК",
+      "barcode": "263423643566785",
+      "operation": "Сторно",
+      "division": "ТП",
+      "placement": "Цех ТП Общий",
+      "movement": "ТП АБК",
+      "movement_info": "",
+      "date": "2020-07-12T12:58:34"
+    },
+    {
+      "object_id": "456454", 
+      "name": "Блок Гнусмус 2456w",
+      "description": "фывфыв",
+      "barcode": "263423643566785",
+      "operation": "Перемещение",
+      "division": "ТП",
+      "placement": "Цех ТП Общий",
+      "movement": "ТП АБК",
+      "movement_info": "",
+      "date": "2020-07-03T14:59:34"
+    }
+  ]
 }
