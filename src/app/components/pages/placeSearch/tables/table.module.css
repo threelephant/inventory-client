@@ -1,0 +1,23 @@
+.row {
+  user-select: none;
+}
+
+.row_selected {
+  background-color: rgb(237, 237, 245) !important;
+  user-select: none;
+}
+
+.tbody_scroll {
+  display: block;
+  overflow-y: scroll;
+  max-height: 500px;
+}
+
+.tr_scroll {
+  display: block;
+}
+
+.td_scroll {
+  display: block;
+  max-width: 100%;
+}

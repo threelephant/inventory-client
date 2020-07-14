@@ -7,7 +7,7 @@ import { Name, Barcode, Description } from './textelements'
 import resetTables from './utils/resetTables'
 import isValid from './utils/validation'
 import PlaceForm from './places'
-import inventoryService from '../../../../services/inventory'
+import inventoryService from '../../../services/inventory'
 
 const InventoryFormBody = (props) => {
   return (

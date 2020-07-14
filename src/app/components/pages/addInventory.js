@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import Header from '../includes/header'
-import InventoryForm from './forms/inventory'
+import InventoryForm from './inventory'
 
 const InventoryTitle = () => {
   return (

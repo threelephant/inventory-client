@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'reactstrap'
-import services from '../../../../../services/division'
+import services from '../../../../services/division'
 import { DivisionTable, PlacementTable } from './tables/tables'
 
 const PlaceSearchForm = ({ setDiv, setPlace, chosenDivision, setChosenDivision }) => {

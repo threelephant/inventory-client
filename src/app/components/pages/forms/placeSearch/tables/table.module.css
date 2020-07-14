@@ -1,8 +1,0 @@
-.row {
-  user-select: none;
-}
-
-.row_selected {
-  background-color: rgb(237, 237, 245) !important;
-  user-select: none;
-}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Table } from 'reactstrap'
 import styles from './table.module.css'
-import servicesPlacement from '../../../../../services/placement'
+import servicesPlacement from '../../../../services/placement'
 
 const style = styles.row_selected
 
@@ -32,8 +32,9 @@ const DivisionTable = (props) => {
       key={key}
       id={`division` + key}
       onClick={() => setDivision(division, key)}
+      className={styles.tr_scroll}
     >
-      <td>
+      <td className={styles.td_scroll}>
         {division}
       </td>
     </tr>
@@ -46,7 +47,7 @@ const DivisionTable = (props) => {
           <th>Отдел</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className={styles.tbody_scroll}>
         {divisionElems}
       </tbody>
     </Table>
@@ -75,8 +76,9 @@ const PlacementTable = (props) => {
       key={key}
       id={`placement` + key}
       onClick={() => setPlace(placement, key)}
+      className={styles.tr_scroll}
     >
-      <td>
+      <td className={styles.td_scroll}>
         {placement}
       </td>
     </tr>
@@ -97,7 +99,7 @@ const PlacementTable = (props) => {
           <th>Помещение</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className={styles.tbody_scroll}>
         {placeElems}
       </tbody>
     </Table>
