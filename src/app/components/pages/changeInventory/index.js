@@ -10,7 +10,7 @@ const InventoryForm = () => {
   const [number, setNumber] = useState('')
   const [id, setId] = useState('')
 
-  const onChange = e => setNumber(e.target.value) 
+  const onChange = e => setNumber(e.target.value)
 
   const onChangeSelect = (e) => {
     e.preventDefault()
@@ -25,18 +25,16 @@ const InventoryForm = () => {
       })
   }, [id])
 
-  console.log(number, prevItem)
-
   return (
     <Form>
       <Row sm="1" md="2">
         <Col sm="12" md={{ size: 5, offset: 1 }}>
           <Number onClick={onChangeSelect} onChange={onChange} />
-          <h5>Название</h5>
-          <h5>Описание</h5>
-          <h5>Штрих-код</h5>
-          <h5>Текущий отдел</h5>
-          <h5>Текущее помещение</h5><br />
+          <h5>Название {prevItem.name ? prevItem.name : ""}</h5>
+          <h5>Описание {prevItem.description}</h5>
+          <h5>Штрих-код {prevItem.barcode}</h5>
+          <h5>Текущий отдел {prevItem.division}</h5>
+          <h5>Текущее помещение {prevItem.placement}</h5><br />
 
           <div>
             <Label>Куда</Label>
