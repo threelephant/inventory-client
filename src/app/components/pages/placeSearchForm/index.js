@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Form, Row, Col } from 'reactstrap'
-import services from '../../../../services/division'
+import services from '../../../services/division'
 import { Division, Placement } from './placeInputs'
 import { DivisionTable, PlacementTable } from './tables/tables'
 

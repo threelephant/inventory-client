@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../includes/header'
-import PlaceSearchForm from './placeSearch'
+import PlaceSearchForm from './placeSearchForm'
 import { Container, Row, Col } from 'reactstrap'
 
 const Title = () => {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { } from 'react'
 import { Alert, FormGroup, Button } from 'reactstrap'
 import styles from './inventory.module.css'
 
@@ -18,21 +18,8 @@ const Danger = () => {
   )
 }
 
-const Submit = ({ onClick }) => {
-  return (
-    <Button
-      onClick={onClick}
-      type="click"
-      color="primary"
-      className="mr-2"
-    >
-      Выполнить операцию
-    </Button>
-  )
-}
-
 const MessagesList = ({ errors }) => {
-  const errorsElems = errors.map((error, key) =>
+  let errorsElems = errors.map((error, key) =>
     <div key={key}>&bull; { error }</div> 
   )
 
@@ -60,36 +47,28 @@ const Message = ({ success, error }) => {
   )
 }
 
-const ButtonGroup = (props) => {
+const ControlButtons = (props) => {
   return (
-    <div>
-      <FormGroup className="d-flex-inline">
-        <Submit onClick={props.onClick} />{' '}
+    <div className={styles.buttons}>
+      <FormGroup>
         <Button
-         type="reset" 
-         onClick={props.reset} 
-         outline 
-         color="danger"
+          color="primary"
+          onClick={props.onSubmit}
+        >
+          Выполнить операцию
+      </Button>{' '}
+        <Button
+          type="reset"
+          color="danger"
+          outline
+          onClick={props.onReset}
         >
           Очистить
-        </Button>
+      </Button>
       </FormGroup>
       <Message success={props.success} error={props.error} />
     </div>
   )
 }
 
-const ButtonForm = (props) => {
-  return (
-    <div className={`${styles.buttons} d-flex-inline`}>
-      <ButtonGroup
-        onClick={props.onClick}
-        reset={props.reset}
-        success={props.success}
-        error={props.error}
-      />
-    </div>
-  )
-}
-
-export default ButtonForm
+export default ControlButtons

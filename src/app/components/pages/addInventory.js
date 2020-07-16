@@ -7,7 +7,7 @@ const InventoryTitle = () => {
   return (
     <Row>
       <Col sm="12" md={{ size: 6, offset: 1 }} className="mb-4">
-        <h2>Добавление инвертарных карточек</h2>
+        <h2>Добавление инвертарной карточки</h2>
       </Col>
     </Row>
   )
