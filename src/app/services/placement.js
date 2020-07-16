@@ -7,6 +7,10 @@ const get = (division) => {
     if (response.data.length > 1) {
       return []
     }
+
+    if (response.data[0] === undefined) {
+      return []
+    }
     
     return response.data[0].array
   })
