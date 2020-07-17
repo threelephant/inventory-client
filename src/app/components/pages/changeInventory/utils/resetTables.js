@@ -1,4 +1,4 @@
-import styles from '../../pages/changeInventory/places/tables/table.module.css'
+import styles from '../places/tables/table.module.css'
 
 const resetTables = () => {
   const elemsDivision = document.querySelectorAll('#division_table tr')

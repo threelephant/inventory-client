@@ -3,14 +3,17 @@ import {
   Label, InputGroupAddon, FormGroup, Button, Input, InputGroup
 } from 'reactstrap'
 
-const Number = ({ onClick, onChange }) => {
+const Number = (props) => {
   return (
     <FormGroup>
       <Label for="id">Инвентарный номер</Label>
       <InputGroup>
-        <Input onChange={onChange} name="object_id" />
+        <Input
+         onChange={props.onChange} 
+         name="object_id"
+        />
         <InputGroupAddon addonType="append" name="object_id">
-          <Button onClick={onClick}>Выбрать</Button>
+          <Button onClick={props.onClick}>Выбрать</Button>
         </InputGroupAddon>
       </InputGroup>
     </FormGroup>

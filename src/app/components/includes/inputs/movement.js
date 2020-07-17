@@ -6,7 +6,7 @@ import {
 const Movement = ({ onChange }) => {
   return (
     <FormGroup>
-      <Label>Описание последнего движения объекта</Label>
+      <Label>Описание движения объекта</Label>
       <Input name="movement" type="textarea" onChange={onChange}></Input>
     </FormGroup>
   )
@@ -15,7 +15,7 @@ const Movement = ({ onChange }) => {
 const MovementInfo = ({ onChange }) => {
   return (
     <FormGroup>
-      <Label>Доп. инфо последнего движения объекта</Label>
+      <Label>Доп. инфо движения объекта</Label>
       <Input name="movement_info" type="textarea" onChange={onChange}></Input>
     </FormGroup>
   )

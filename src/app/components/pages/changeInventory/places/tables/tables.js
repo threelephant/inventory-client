@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Table } from 'reactstrap'
 import styles from './table.module.css'
 import servicesPlacement from '../../../../../services/placement'
-import resetTables from '../../../../includes/utils/resetTables'
+import resetTables from '../../utils/resetTables'
 
 const style = styles.row_selected
 

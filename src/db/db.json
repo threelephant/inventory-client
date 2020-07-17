@@ -134,11 +134,11 @@
     "name": "Монитор Samsung 2043nw",
     "description": "ТП АБК",
     "barcode": "0000000006651",
-    "operation": "Передано в ремонт",
-    "division": "АХО",
-    "placement": "АХО 101",
-    "movement": "sdasdas",
-    "movement_info": "asdasdasd",
-    "date": "2020-07-16T20:27:57.732Z"
+    "operation": "Сторно",
+    "division": "БОТ",
+    "placement": "БОТ 3",
+    "movement": "ТП АБК (Шабаловская И.К.)",
+    "movement_info": "tsk7-it-01",
+    "date": "2020-07-17T12:38:31.674Z"
   }
 }

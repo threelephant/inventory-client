@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { Form, Row, Col } from 'reactstrap'
-import Number from './number'
-import Operations from './operations'
-import Labels from './labels'
-import PlacesTo from './placesTo'
+import Number from './inputs/number'
+import Operations from './inputs/operations'
+import Labels from './inputs/labels'
 import Places from './places'
 import ControlButtons from './buttons/controlButtons'
 import { Movement, MovementInfo } from '../../includes/inputs/movement'
 import services from '../../../services/latestInventory'
-import resetTables from '../../includes/utils/resetTables'
+import isValid from './utils/validation'
+import resetTables from './utils/resetTables'
+import setMovement from './utils/setMovement'
 
 const InventoryForm = () => {
   const [item, setItem] = useState({})
@@ -18,11 +19,11 @@ const InventoryForm = () => {
   const [errorMessage, setErrorMessage] = useState([])
   const [chosenDivision, setChosenDivision] = useState('')
   const [newItem, setNewItem] = useState({operation: "Списание"})
-
   const onChange = e => setNumber(e.target.value)
 
   const onChangeSelect = (e) => {
     e.preventDefault()
+
     // eslint-disable-next-line
     if (number === undefined || !(number == parseInt(number))) {
       setErrorMessage(["Заполните инвентарный номер в правильном формате"])
@@ -33,18 +34,15 @@ const InventoryForm = () => {
     setId(number)
   }
 
-  const setDiv = (value) => {
-    setNewItem(previousItem => ({
-      ...previousItem,
-      division: value
-    }))
-  }
+  const setPlaceName = (name) => {
+    const setPlaceValue = (value) => {
+      setNewItem(previousItem => ({
+        ...previousItem,
+        [name]: value
+      }))
+    }
 
-  const setPlace = (value) => {
-    setNewItem(previousItem => ({
-      ...previousItem,
-      placement: value
-    }))
+    return setPlaceValue
   }
   
   const handleChange = e => {
@@ -72,44 +70,17 @@ const InventoryForm = () => {
       })
   }, [id])
 
-  const isValid = (item) => {
-    const messages = []
-
-    if (item.object_id === "" || item.object_id === undefined) {
-      messages.push('Заполните инвентарный номер')
-    }
-
-    if (newItem.division === "" || newItem.division === undefined) {
-      messages.push('Заполните отдел')
-    }
-
-    if (newItem.placement === "" || newItem.placement === undefined) {
-      messages.push('Заполните помещение')
-    }
-
-    return messages
-  }
-
   const handleSubmitClick = e => {
     e.preventDefault()
 
-    let error = isValid(item)
+    const error = isValid(item, newItem)
 
     if (error.length !== 0) {
       setErrorMessage(error)
       return
     }
 
-    let newMovement = newItem.movement
-    let newMovementInfo = newItem.movement_info
-
-    if (newItem.movement === "" || newItem.movement === undefined) {
-      newMovement = item.movement
-    }
-
-    if (newItem.movement_info === "" || newItem.movement_info === undefined) {
-      newMovementInfo = item.movement_info
-    }
+    const { newMovement, newMovementInfo } = setMovement(newItem, item)
 
     const completedItem = {
       ...item,
@@ -141,14 +112,17 @@ const InventoryForm = () => {
     <Form>
       <Row sm="1" md="2">
         <Col sm="12" md={{ size: 5, offset: 1 }}>
-          <Number onClick={onChangeSelect} onChange={onChange} />
+          <Number 
+            onClick={onChangeSelect} 
+            onChange={onChange}
+          />
           <Labels item={item} />
           <Operations onChange={handleChange} />
           <Places 
             chosenDivision={chosenDivision}
             setChosenDivision={setChosenDivision}
-            setDiv={setDiv}
-            setPlace={setPlace}
+            setDiv={setPlaceName("division")}
+            setPlace={setPlaceName("placement")}
           />
           <Movement onChange={handleChange} />
           <MovementInfo onChange={handleChange} />
@@ -167,4 +141,3 @@ const InventoryForm = () => {
 }
 
 export default InventoryForm
-
