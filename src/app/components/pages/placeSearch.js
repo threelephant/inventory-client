@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../includes/header'
 import PlaceSearchForm from './placeSearchForm'
 import { Container, Row, Col } from 'reactstrap'
@@ -7,7 +7,7 @@ const Title = () => {
   return (
     <Row>
       <Col sm="12" md={{ size: 6, offset: 1 }} className="mb-4">
-        <h2>Поиск местоположения</h2>
+        <h2>Поиск отделов и помещений</h2>
       </Col>
     </Row>
   )
@@ -25,7 +25,11 @@ const Page = (props) => {
   )
 }
 
-const placeSearch = (props) => {
+const PlaceSearch = (props) => {
+  useEffect(() => {
+    document.title = "Поиск отделов и помещений"
+  }, [])
+
   return (
     <div>
       <Header />
@@ -39,4 +43,4 @@ const placeSearch = (props) => {
   )
 }
 
-export default placeSearch
+export default PlaceSearch

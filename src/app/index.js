@@ -5,6 +5,7 @@ import AddInventory from './components/pages/addInventory'
 import ChangeInventory from './components/pages/changeInventory'
 import ObjectSearchPage from './components/pages/objectSearch'
 import PlaceSearch from './components/pages/placeSearch'
+import MotionReport from './components/pages/motionReport'
 
 const App = () => {
   return (
@@ -15,7 +16,9 @@ const App = () => {
         <Route path="/login" render={() => <Auth type="login" />} />
         <Route path="/register" render={() => <Auth type="register" />} />
 
-        <Route path="/report" render={() => "report"} />
+        <Route exact path="/report" render={() => "report"} />
+        <Route path="/report/balance" render={() => "report"} />
+        <Route path="/report/motion" render={() => <MotionReport />} />
 
         <Route exact path="/place" render={() => "place"} />
         <Route path="/place/search" render={() => <PlaceSearch />} />

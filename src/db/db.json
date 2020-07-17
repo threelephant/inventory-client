@@ -9,11 +9,12 @@
   ],
   "object": {
     "operation": "Приход",
-    "division": "АХО",
-    "placement": "АХО 101",
-    "object_id": "3534534",
-    "name": "etert",
-    "date": "2020-07-14T18:56:59.374Z"
+    "division": "БКС",
+    "placement": "БКС 2",
+    "object_id": "567467",
+    "name": "bgvyvty",
+    "barcode": "567567",
+    "date": "2020-07-17T18:13:47.626Z"
   },
   "division": [
     "Архив",
@@ -94,7 +95,7 @@
   "objects": [
     {
       "object_id": "000144",
-      "name": "Монитор Samsung 2043nw",
+      "name": "sams",
       "description": "ТП АБК",
       "barcode": "0000000006651",
       "operation": "Перемещение",
@@ -106,7 +107,7 @@
     },
     {
       "object_id": "000145",
-      "name": "Монитор Гнусмус 2043nw",
+      "name": "sams",
       "description": "ТП ТП АБК",
       "barcode": "263423643566785",
       "operation": "Сторно",
@@ -118,8 +119,32 @@
     },
     {
       "object_id": "456454",
-      "name": "Блок Гнусмус 2456w",
-      "description": "фывфыв",
+      "name": "aaa",
+      "description": "bbbbb",
+      "barcode": "263423643566785",
+      "operation": "Перемещение",
+      "division": "ТП",
+      "placement": "Цех ТП Общий",
+      "movement": "ТП АБК",
+      "movement_info": "",
+      "date": "2020-07-03T14:59:34"
+    },
+    {
+      "object_id": "237423848",
+      "name": "aaa",
+      "description": "bbbbb",
+      "barcode": "263423643566785",
+      "operation": "Перемещение",
+      "division": "ТП",
+      "placement": "Цех ТП Общий",
+      "movement": "ТП АБК",
+      "movement_info": "",
+      "date": "2020-07-03T14:59:34"
+    },
+    {
+      "object_id": "4563454",
+      "name": "aaa",
+      "description": "bbbbb",
       "barcode": "263423643566785",
       "operation": "Перемещение",
       "division": "ТП",
@@ -131,14 +156,45 @@
   ],
   "object_post": {
     "object_id": "000144",
-    "name": "Монитор Samsung 2043nw",
+    "name": "sams",
     "description": "ТП АБК",
     "barcode": "0000000006651",
-    "operation": "Сторно",
-    "division": "БОТ",
-    "placement": "БОТ 3",
-    "movement": "ТП АБК (Шабаловская И.К.)",
-    "movement_info": "tsk7-it-01",
-    "date": "2020-07-17T12:38:31.674Z"
+    "operation": "Передано в ремонт",
+    "division": "БКС",
+    "placement": "БКС 2",
+    "movement": "dasdasd",
+    "movement_info": "asdasdasd",
+    "date": "2020-07-17T17:50:36.261Z"
+  },
+  "report_motion": {
+    "operation": "Списание",
+    "object_id": "4234",
+    "begin": "2020-07-01",
+    "end": "2020-07-29"
+  },
+  "report_motion_test": {
+    "date": "02.07.2020",
+    "material_objects": [
+      {
+        "name": "Монитор",
+        "object_id": "000170",
+        "operation": "Перемещение",
+        "date_operation": "02.09.2019",
+        "placement": "ОТиЗ Общий",
+        "previous_placement": "Склад",
+        "movement": "ООТиЗ",
+        "movement_info": "tsk7-6"
+      },
+      {
+        "name": "Монитор samsung 2255",
+        "object_id": "000227",
+        "operation": "Инвентаризация",
+        "date_moving": "01.12.2019",
+        "placement": "Бухгалтерия Общий",
+        "previous_placement": "Бухгалтерия Общий",
+        "movement": "Бух расч",
+        "movement_info": "tsk7-buh-01"
+      }
+    ]
   }
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Spinner, Input, Label, FormGroup } from 'reactstrap'
-import services from '../../../../services/operations'
+import services from '../../../services/operations'
 
 const Loading = () => <div><Spinner /></div>
 

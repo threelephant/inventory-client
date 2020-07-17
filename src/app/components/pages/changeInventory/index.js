@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Form, Row, Col } from 'reactstrap'
 import Number from './inputs/number'
-import Operations from './inputs/operations'
+import Operations from '../../includes/inputs/operations'
 import Labels from './inputs/labels'
 import Places from './places'
 import ControlButtons from './buttons/controlButtons'
@@ -67,6 +67,9 @@ const InventoryForm = () => {
       .getLatest(id)
       .then(latestObject => {
         setItem(latestObject)
+      })
+      .catch(response => {
+        setItem({})
       })
   }, [id])
 

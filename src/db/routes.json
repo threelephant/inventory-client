@@ -1,6 +1,7 @@
 {
   "/api/*": "/$1",
   "/placement/:category": "/placement?category=:category",
-  "/objects/:object_id": "/objects?object_id=:object_id",
+  "/objects/object_id/:object_id": "/objects?object_id=:object_id",
+  "/objects/name/:name": "/objects?name=:name",
   "/division/english": "/division_english"
 }

@@ -1,40 +1,40 @@
 import React, { useEffect } from 'react'
 import { Row, Col, Container } from 'reactstrap'
 import Header from '../includes/header'
-import ObjectSearchForm from './objectSearchForm'
+import MotionReportForm from './motionReportForm'
 
-const ObjectTitle = () => {
+const MotionReportTitle = () => {
   return (
     <Row>
       <Col sm="12" md={{ size: 6, offset: 1 }} className="mb-4">
-        <h2>Поиск материальных объектов</h2>
+        <h2>Отчет по движениям</h2>
       </Col>
     </Row>
   )
 }
 
-const ObjectSearch = () => {
+const MotionReportPage = (props) => {
   return (
     <div>
-      <ObjectTitle />
-      <ObjectSearchForm />
+      <MotionReportTitle />
+      <MotionReportForm />
     </div>
   )
 }
 
-const ObjectSearchPage = () => {
+const MotionReport = (props) => {
   useEffect(() => {
-    document.title = "Поиск объектов"
+    document.title = "Отчет по движениям"
   }, [])
 
   return (
     <div>
       <Header />
       <Container fluid className="mb-5">
-        <ObjectSearch />
+        <MotionReportPage />
       </Container>
     </div>
   )
 }
 
-export default ObjectSearchPage
+export default MotionReport
