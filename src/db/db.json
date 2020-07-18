@@ -194,5 +194,24 @@
         "movement_info": "tsk7-buh-01"
       }
     ]
+  },
+  "report_balance": {
+    "date": "02.07.2020",
+    "division": "АСУП",
+    "placement": "АСУП по отделу",
+    "material_objects": [
+      {
+        "name": "Монитор",
+        "object_id": "000170",
+        "movement": "АСУП",
+        "movement_info": "2033"
+      },
+      {
+        "name": "Монитор samsung 2255",
+        "object_id": "000227",
+        "movement": "АСУП",
+        "movement_info": "tskadmin"
+      }
+    ]
   }
 }

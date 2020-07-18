@@ -5,7 +5,10 @@ import AddInventory from './components/pages/addInventory'
 import ChangeInventory from './components/pages/changeInventory'
 import ObjectSearchPage from './components/pages/objectSearch'
 import PlaceSearch from './components/pages/placeSearch'
+import BalanceReport from './components/pages/balanceReport'
 import MotionReport from './components/pages/motionReport'
+import AddDivision from './components/pages/addPlace/addDivision'
+import AddPlacement from './components/pages/addPlace/addPlacement'
 
 const App = () => {
   return (
@@ -17,7 +20,7 @@ const App = () => {
         <Route path="/register" render={() => <Auth type="register" />} />
 
         <Route exact path="/report" render={() => "report"} />
-        <Route path="/report/balance" render={() => "report"} />
+        <Route path="/report/balance" render={() => <BalanceReport />} />
         <Route path="/report/motion" render={() => <MotionReport />} />
 
         <Route exact path="/place" render={() => "place"} />
@@ -28,6 +31,9 @@ const App = () => {
 
         <Route path="/inventory/add" render={() => <AddInventory />} />
         <Route path="/inventory/change" render={() => <ChangeInventory />} />
+
+        <Route path="/place/division" render={() => <AddDivision />} />
+        <Route path="/place/placement" render={() => <AddPlacement />} />
       </Router>
     </div>
   )
