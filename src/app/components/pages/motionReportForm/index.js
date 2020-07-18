@@ -3,12 +3,18 @@ import { Form, Row, Col } from 'reactstrap'
 import Operations from '../../includes/inputs/operations'
 import { Number, Dates } from './inputs'
 import Buttons from './buttons'
+import Message from '../../includes/inputs/alerts'
 import ReportTable from './table'
 import services from '../../../services/motionReport'
+import Valid from './utils/validation'
 
 const MotionReportForm = () => {
   const [item, setItem] = useState({ operation: "Списание" })
-  const [response, setResponse] = useState([])
+  const [response, setResponse] = useState({})
+  const [success, setSuccess] = useState(-1)
+  const [errorMessage, setErrorMessage] = useState([])
+
+  console.log(item)
 
   const handleChange = e => {
     const { name, value } = e.target
@@ -20,41 +26,59 @@ const MotionReportForm = () => {
 
   const reset = () => {
     setItem({ operation: "Списание" })
-    setResponse([])
     document.querySelector('form').reset()
+    setErrorMessage([])
+    setResponse([])
   }
 
   const onSubmit = (e) => {
     e.preventDefault()
-    /* eslint-disable eqeqeq */
-    if (item.object_id === undefined 
-      || !(item.object_id == parseInt(item.object_id))) {
-        console.log('Заполните инвентарный номер в правильном формате')
-    }
+    const errors = Valid(item)
 
-    if (item.begin > item.end) {
-      console.log('Конечная дата раньше начальной даты')
+    if (errors.length !== 0) {
+      setErrorMessage(errors)
       return
     }
 
     services
       .send(item)
       .then(response => {
-        setResponse(response)
-        reset()
+        // setResponse(response)
+        setSuccess(1)
       })
       .catch(reason => {
-        // setResponse(reason)
+        setSuccess(0)
+      })
+      .finally(onfinally => {
+        setTimeout(() => {
+          setSuccess(-1)
+        }, 4000)
+      })
+
+    services
+      .resTest()
+      .then(response => {
+        setResponse(response)
+      })
+      .catch(reason => {
       })
       .finally(onfinally => {
       })
   }
 
+  console.log(response)
+
   return (
     <div>
       <Form>
         <Row>
-          <Col md={{ size: 5, offset: 1 }}>
+          <Col md={{ order: 2 }} className="ml-3 ml-md-5">
+            <Message
+              success={success}
+              error={errorMessage}
+            />
+          </Col>
+          <Col md={{ size: 5, offset: 1, order: 1 }}>
             <Number onChange={handleChange} />
             <Dates onChange={handleChange} />
             <Operations onChange={handleChange} />
@@ -65,7 +89,11 @@ const MotionReportForm = () => {
           </Col>
         </Row>
       </Form>
-      <ReportTable />
+      <Row noGutters>
+        <Col md={{ offset: 1 }}>
+          <ReportTable response={response} />
+        </Col>
+      </Row>
     </div>
   )
 }

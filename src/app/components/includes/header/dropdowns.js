@@ -11,10 +11,10 @@ const DropdownPlace = () => {
         Добавление отделов и помещений
       </DropdownToggle>
       <DropdownMenu direction="left">
-        <DropdownItem href="/">
+        <DropdownItem href="/place/division">
           Добавление отделов
         </DropdownItem>
-        <DropdownItem href="/">
+        <DropdownItem href="/place/placement">
           Добавление помещений
         </DropdownItem>
       </DropdownMenu>
@@ -29,10 +29,10 @@ const DropdownReports = () => {
         Отчеты
       </DropdownToggle>
       <DropdownMenu direction="left">
-        <DropdownItem href="/">
+        <DropdownItem href="/report/balance">
           Отчет по остаткам
         </DropdownItem>
-        <DropdownItem href="/">
+        <DropdownItem href="/report/motion">
           Отчет по движениям
         </DropdownItem>
       </DropdownMenu>

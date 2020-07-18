@@ -9,12 +9,12 @@
   ],
   "object": {
     "operation": "Приход",
+    "object_id": "345345",
+    "barcode": "4324",
     "division": "БКС",
-    "placement": "БКС 2",
-    "object_id": "567467",
-    "name": "bgvyvty",
-    "barcode": "567567",
-    "date": "2020-07-17T18:13:47.626Z"
+    "placement": "БКС 3",
+    "name": "34534",
+    "date": "2020-07-18T10:56:10.395Z"
   },
   "division": [
     "Архив",
@@ -168,16 +168,16 @@
   },
   "report_motion": {
     "operation": "Списание",
-    "object_id": "4234",
+    "object_id": "23423",
     "begin": "2020-07-01",
-    "end": "2020-07-29"
+    "end": "2020-07-17"
   },
   "report_motion_test": {
     "date": "02.07.2020",
+    "object_id": "000170",
+    "name": "Монитор",
     "material_objects": [
       {
-        "name": "Монитор",
-        "object_id": "000170",
         "operation": "Перемещение",
         "date_operation": "02.09.2019",
         "placement": "ОТиЗ Общий",
@@ -186,10 +186,8 @@
         "movement_info": "tsk7-6"
       },
       {
-        "name": "Монитор samsung 2255",
-        "object_id": "000227",
         "operation": "Инвентаризация",
-        "date_moving": "01.12.2019",
+        "date_operation": "01.12.2019",
         "placement": "Бухгалтерия Общий",
         "previous_placement": "Бухгалтерия Общий",
         "movement": "Бух расч",

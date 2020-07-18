@@ -22,8 +22,7 @@ const Dates = ({ onChange }) => {
           type="date"
           name="begin"
           id="begin"
-          placeholder="date placeholder"
-          onChange={onChange}
+          onInput={onChange}
         />
       </FormGroup>
       <FormGroup>
@@ -32,8 +31,7 @@ const Dates = ({ onChange }) => {
           type="date"
           name="end"
           id="end"
-          placeholder="date placeholder"
-          onChange={onChange}
+          onInput={onChange}
         />
       </FormGroup>
     </div>
