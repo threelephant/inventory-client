@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import {
   Collapse, Nav, Navbar, NavbarToggler,
-  NavbarBrand
+  NavbarBrand, NavItem, NavLink
 } from 'reactstrap'
 import {
-  DropdownPlace, DropdownInventory,
+  DropdownInventory,
   DropdownReports, DropdownSearch
 } from './dropdowns'
 
@@ -14,7 +14,11 @@ const NavbarLinks = () => {
       <DropdownInventory />
       <DropdownReports />
       <DropdownSearch />
-      <DropdownPlace />
+      <NavItem>
+        <NavLink href="/place">
+          Добавление отделов и помещений
+        </NavLink>
+      </NavItem>
     </Nav>
   )
 }

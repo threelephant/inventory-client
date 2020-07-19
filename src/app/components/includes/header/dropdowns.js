@@ -4,24 +4,6 @@ import {
   DropdownMenu, DropdownItem
 } from 'reactstrap'
 
-const DropdownPlace = () => {
-  return (
-    <UncontrolledDropdown nav inNavbar>
-      <DropdownToggle nav caret>
-        Добавление отделов и помещений
-      </DropdownToggle>
-      <DropdownMenu direction="left">
-        <DropdownItem href="/place/division">
-          Добавление отделов
-        </DropdownItem>
-        <DropdownItem href="/place/placement">
-          Добавление помещений
-        </DropdownItem>
-      </DropdownMenu>
-    </UncontrolledDropdown>
-  )
-}
-
 const DropdownReports = () => {
   return (
     <UncontrolledDropdown nav inNavbar>
@@ -77,7 +59,6 @@ const DropdownSearch = () => {
 }
 
 export {
-  DropdownPlace,
   DropdownInventory,
   DropdownReports,
   DropdownSearch

@@ -213,5 +213,12 @@
         "movement_info": "tskadmin"
       }
     ]
+  },
+  "setdivision": {
+    "division": "werwe"
+  },
+  "setplacement": {
+    "placement": "werwer",
+    "division": "БИОКАД"
   }
 }

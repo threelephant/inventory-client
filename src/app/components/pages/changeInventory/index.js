@@ -18,7 +18,7 @@ const InventoryForm = () => {
   const [success, setSuccess] = useState(-1)
   const [errorMessage, setErrorMessage] = useState([])
   const [chosenDivision, setChosenDivision] = useState('')
-  const [newItem, setNewItem] = useState({operation: "Списание"})
+  const [newItem, setNewItem] = useState({ operation: "Списание" })
   const onChange = e => setNumber(e.target.value)
 
   const onChangeSelect = (e) => {
@@ -44,7 +44,7 @@ const InventoryForm = () => {
 
     return setPlaceValue
   }
-  
+
   const handleChange = e => {
     const { name, value } = e.target
     setNewItem(previousItem => ({
@@ -59,7 +59,7 @@ const InventoryForm = () => {
     document.querySelector('form').reset()
     resetTables()
     setChosenDivision('')
-    setNewItem({operation: "Списание"})
+    setNewItem({ operation: "Списание" })
   }
 
   useEffect(() => {
@@ -115,13 +115,13 @@ const InventoryForm = () => {
     <Form>
       <Row sm="1" md="2">
         <Col sm="12" md={{ size: 5, offset: 1 }}>
-          <Number 
-            onClick={onChangeSelect} 
+          <Number
+            onClick={onChangeSelect}
             onChange={onChange}
           />
           <Labels item={item} />
           <Operations onChange={handleChange} />
-          <Places 
+          <Places
             chosenDivision={chosenDivision}
             setChosenDivision={setChosenDivision}
             setDiv={setPlaceName("division")}
