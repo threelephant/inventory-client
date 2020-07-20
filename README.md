@@ -1,68 +1,52 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Система инвентаризации (Frontend)
 
-## Available Scripts
+**Внимание! Программа находится в стадии разработки. Запускайте на свой страх и риск!**
 
-In the project directory, you can run:
+**Warning! The program is under development. Run at your own risk!**
 
-### `npm start`
+## Требуемые программы для установки
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [**Node.js**](https://nodejs.org/en/download/current/) [**(<14.3)**](https://nodejs.org/download/release/v14.3.0/)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Для Linux (Debian-based)
+```sh
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
 
-### `npm test`
+## Установка
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Для режима разработки
 
-### `npm run build`
+```sh
+git clone https://github.com/threelephant/inventory-client
+npm install --dev
+npm start
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Мокап данных
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Для мокапа данныx используется библиотека [**json-server**](https://www.npmjs.com/package/json-server)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+npm run server
+```
 
-### `npm run eject`
+### Для развертывания
+Для развертывания необходим инструмент для обслуживания
+SPA-приложений - [**serve**](https://www.npmjs.com/package/serve)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+git clone https://github.com/threelephant/inventory-client
+npm install
+npm install -g -s serve
+npm run -s build
+serve -s build
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Разверывание с помощью [**Docker**](https://www.docker.com/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```sh
+docker build -t inventory-client .
+docker run -d -p <insert-host-port>:5000 inventory-client
+```

@@ -1,8 +1,8 @@
 import React from 'react'
 import Header from '../includes/header'
-import { Container, Row, Col, Media } from 'reactstrap'
+import { Container } from 'reactstrap'
 
-const Page = ({ type }) => {
+const Page = () => {
   return (
     <div>
       <Header />

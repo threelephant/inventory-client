@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../includes/header'
-import { Container, Row, Col, Media } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
 import InventoryCategory from '../includes/categories/inventory'
 import ReportCategory from '../includes/categories/report'
 import SearchCategory from '../includes/categories/search'
