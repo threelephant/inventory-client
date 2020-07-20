@@ -10,11 +10,14 @@
   "object": {
     "operation": "Приход",
     "object_id": "345345",
-    "barcode": "4324",
-    "division": "БКС",
-    "placement": "БКС 3",
-    "name": "34534",
-    "date": "2020-07-18T10:56:10.395Z"
+    "name": "tertert",
+    "division": "БИОКАД",
+    "placement": "БИОКАД 2",
+    "barcode": "35345345",
+    "description": "dfgdfg",
+    "movement": "dgdfg",
+    "movement_info": "dfgdfgd",
+    "date": "2020-07-20T14:54:39.367Z"
   },
   "division": [
     "Архив",
@@ -159,18 +162,18 @@
     "name": "sams",
     "description": "ТП АБК",
     "barcode": "0000000006651",
-    "operation": "Передано в ремонт",
-    "division": "БКС",
-    "placement": "БКС 2",
-    "movement": "dasdasd",
-    "movement_info": "asdasdasd",
-    "date": "2020-07-17T17:50:36.261Z"
+    "operation": "Списание",
+    "division": "БИОКАД",
+    "placement": "БИОКАД 2",
+    "movement": "ТП АБК (Шабаловская И.К.)",
+    "movement_info": "tsk7-it-01",
+    "date": "2020-07-20T14:55:01.072Z"
   },
   "report_motion": {
     "operation": "Списание",
-    "object_id": "23423",
+    "object_id": "456456",
     "begin": "2020-07-01",
-    "end": "2020-07-17"
+    "end": "2020-07-24"
   },
   "report_motion_test": {
     "date": "02.07.2020",
@@ -215,10 +218,10 @@
     ]
   },
   "setdivision": {
-    "division": "werwe"
+    "division": "gdfgd"
   },
   "setplacement": {
-    "placement": "werwer",
+    "placement": "dfgdfg",
     "division": "БИОКАД"
   }
 }

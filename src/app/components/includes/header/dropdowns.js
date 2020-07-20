@@ -47,10 +47,10 @@ const DropdownSearch = () => {
         Поиск
       </DropdownToggle>
       <DropdownMenu direction="left">
-        <DropdownItem href="/object/search">
+        <DropdownItem href="/search/object">
           Поиск материальных обектов
         </DropdownItem>
-        <DropdownItem href="/place/search">
+        <DropdownItem href="/search/place">
           Поиск отделов и помещений
         </DropdownItem>
       </DropdownMenu>

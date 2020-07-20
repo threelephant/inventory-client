@@ -45,6 +45,8 @@ const MotionReportForm = () => {
       .then(response => {
         // setResponse(response)
         setSuccess(1)
+        setErrorMessage([])
+        setItem({ operation: "Списание" })
       })
       .catch(reason => {
         setSuccess(0)
