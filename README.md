@@ -4,9 +4,14 @@
 
 **Warning! The program is under development. Run at your own risk!**
 
+## Ссылки
+
+- [**Backend**](https://github.com/RuslanMac/Inventory1)
+- [**Документация API**](https://github.com/RuslanMac/Inventory1)
+
 ## Требуемые программы для установки
 
-- [**Node.js**](https://nodejs.org/en/download/current/) [**(<14.3)**](https://nodejs.org/download/release/v14.3.0/)
+- [**Node.js**](https://nodejs.org/en/download/current/) [**(>14.3)**](https://nodejs.org/download/release/v14.3.0/)
 
 Для Linux (Debian-based)
 ```sh
