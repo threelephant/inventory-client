@@ -7,7 +7,7 @@
 ## Ссылки
 
 - [**Backend**](https://github.com/RuslanMac/Inventory1)
-- [**Документация API**](https://github.com/RuslanMac/Inventory1)
+- [**Документация API**](https://gist.github.com/threelephant/ca48ade9ed49a3749c80d587e7ef3a31)
 
 ## Требуемые программы для установки
 
