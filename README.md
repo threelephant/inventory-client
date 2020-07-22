@@ -29,7 +29,7 @@ npm start
 
 Для мокапа данныx используется библиотека [**json-server**](https://www.npmjs.com/package/json-server).
 Чтобы запустить [**json-server**](https://www.npmjs.com/package/json-server) - введите команду, представленную
-ниже в корневой директории репозитория.
+ниже в корневой директории репозитория:
 
 ```sh
 npm run server
@@ -37,7 +37,7 @@ npm run server
 
 ### Для развертывания
 Для развертывания необходим инструмент для обслуживания
-SPA-приложений - [**serve**](https://www.npmjs.com/package/serve)
+SPA-приложений - [**serve**](https://www.npmjs.com/package/serve):
 
 ```sh
 git clone https://github.com/threelephant/inventory-client
@@ -49,10 +49,18 @@ serve -s build
 ```
 
 #### Разверывание с помощью [**Docker**](https://www.docker.com/)
+При скачивании с данного репозитория, можно построить собственный образ:
 
 ```sh
 docker build -t inventory-client .
 docker run -d -p <insert-host-port>:5000 inventory-client
+```
+
+Также образ можно получить из [**docker hub**](https://hub.docker.com/r/threelephant/inventory-client):
+
+```sh
+docker pull threelephant/inventory-client
+docker run -d -p <insert-host-port>:5000 threelephant/inventory-client
 ```
 
 ## Ссылки
