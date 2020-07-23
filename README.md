@@ -6,7 +6,7 @@
 
 ## Требуемые программы для установки
 
-- [**Node.js**](https://nodejs.org/en/download/current/) [**(>14.3)**](https://nodejs.org/download/release/v14.3.0/)
+- [**Node.js**](https://nodejs.org/en/download/current/) [**(>14.5)**](https://nodejs.org/download/release/v14.5.0/)
 
 Для Linux (Debian-based)
 ```sh
