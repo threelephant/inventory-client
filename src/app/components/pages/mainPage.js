@@ -23,7 +23,7 @@ const MainPage = () => {
           </Media>
           <Media body className="ml-lg-5">
             <Media heading className="mb-4">
-              <h1 className="display-4">Система инвентаризации</h1>
+              <div className="display-4">Система инвентаризации</div>
             </Media>
             <Row>
               <Col lg={{ size: 4 }} className="mb-4">

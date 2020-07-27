@@ -1,27 +1,27 @@
 import React from 'react'
 import { FormGroup, Label, Input, Button } from 'reactstrap'
 
-const Login = () => {
+const Login = ({ setUsername }) => {
   return (
     <FormGroup>
       <Label for="login">Логин</Label>
-      <Input type="login" name="login" id="login" />
+      <Input type="login" name="username" id="login" onChange={setUsername} />
     </FormGroup>
   )
 }
 
-const Password = ({ label, type }) => {
+const Password = ({ label, type, setPassword }) => {
   return (
     <FormGroup>
       <Label for={type}>{label}</Label>
-      <Input type="password" name={type} id={type} />
+      <Input type="password" name={type} id={type} onChange={setPassword} />
     </FormGroup>
   )
 }
 
-const ButtonSubmit = ({ title }) => {
+const ButtonSubmit = ({ title, onClick }) => {
   return (
-    <Button>{title}</Button>
+    <Button onClick={onClick}>{title}</Button>
   )
 }
 
