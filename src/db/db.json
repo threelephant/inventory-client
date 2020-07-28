@@ -223,5 +223,12 @@
   "setplacement": {
     "placement": "dfgdfg",
     "division": "БИОКАД"
+  },
+  "token": {
+    "token": "aaabbb"
+  },
+  "check_token": {
+    "name": "qwerty123",
+    "token": "aaabbb"
   }
 }
