@@ -5,16 +5,16 @@ const Login = ({ setUsername }) => {
   return (
     <FormGroup>
       <Label for="login">Логин</Label>
-      <Input type="login" name="username" id="login" onChange={setUsername} />
+      <Input type="login" name="login" id="login" onChange={setUsername} />
     </FormGroup>
   )
 }
 
-const Password = ({ label, type, setPassword }) => {
+const Password = ({ label, name, setPassword }) => {
   return (
     <FormGroup>
-      <Label for={type}>{label}</Label>
-      <Input type="password" name={type} id={type} onChange={setPassword} />
+      <Label for={name}>{label}</Label>
+      <Input type="password" name={name} id={name} onChange={setPassword} />
     </FormGroup>
   )
 }

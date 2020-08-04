@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {
   Collapse, Nav, Navbar, NavbarToggler,
-  NavbarBrand, NavItem, NavLink
+  NavbarBrand, NavItem, NavLink, NavbarText
 } from 'reactstrap'
 import {
   DropdownInventory,
@@ -32,6 +32,7 @@ const NavBody = () => {
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
         <NavbarLinks />
+        <NavbarText>{window.localStorage.getItem('username')}</NavbarText>
       </Collapse>
     </div>
   )

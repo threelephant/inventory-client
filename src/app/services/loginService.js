@@ -1,10 +1,16 @@
 import axios from 'axios'
-const url = 'http://192.168.0.104:5000/api/login'
+const urlLogin = 'http://192.168.0.104:5000/api/login'
+const urlRegister = 'http://192.168.0.104:5000/api/register'
 
 const login = async credentials => {
-  console.log(credentials)
-  const response = await axios.post(url, {}, credentials)
+  const response = await axios.post(urlLogin, {}, credentials)
   return response.data
 }
 
-export default { login }
+const register = async credentials => {
+  const response = await axios.post(urlRegister, credentials)
+  console.log(response)
+  return response
+}
+
+export default { login, register }

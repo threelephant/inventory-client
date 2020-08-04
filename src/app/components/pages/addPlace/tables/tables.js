@@ -14,6 +14,9 @@ const DivisionTable = (props) => {
       .then(divisionsLocal => {
         setDivisions(divisionsLocal)
       })
+      .catch(() => {
+        
+      })
   }, [])
 
   const setDivision = (division, key) => {

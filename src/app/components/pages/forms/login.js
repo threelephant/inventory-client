@@ -17,10 +17,11 @@ const FormLoginBody = () => {
 
   const handleLogin = async (event) => {
     event.preventDefault()
+
     try {
       const newItem = await loginService.login({
         auth: {
-          "username": item.username, 
+          "username": item.login, 
           "password": item.password,
         }
       })
@@ -29,8 +30,13 @@ const FormLoginBody = () => {
         'loggedUser', newItem.token
       )
 
+      window.localStorage.setItem(
+        "username", item.login
+      )
+
       setUser(user)
       setItem({})
+      window.location = "/"
     } catch (exception) {
       
     }
@@ -41,7 +47,7 @@ const FormLoginBody = () => {
   return (
     <Form>
       <Login setUsername={handleChange} />
-      <Password setPassword={handleChange} label="Пароль" type="password" />
+      <Password setPassword={handleChange} label="Пароль" name="password" />
       <ButtonSubmit title="Войти" onClick={handleLogin} />
     </Form>
   )
