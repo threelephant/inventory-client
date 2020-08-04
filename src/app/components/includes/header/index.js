@@ -23,26 +23,19 @@ const NavbarLinks = () => {
   )
 }
 
-const NavBody = () => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const toggle = () => setIsOpen(!isOpen)
 
   return (
-    <div>
-      <NavbarToggler onClick={toggle} />
-      <Collapse isOpen={isOpen} navbar>
-        <NavbarLinks />
-        <NavbarText>{window.localStorage.getItem('username')}</NavbarText>
-      </Collapse>
-    </div>
-  )
-}
-
-const Header = () => {
-  return (
     <Navbar color="dark" dark expand="md" className="mb-4">
       <NavbarBrand href="/">Inventory System</NavbarBrand>
-      <NavBody />
+      <NavbarToggler onClick={toggle} />
+      <Collapse isOpen={isOpen} navbar >
+        <NavbarLinks />
+        <NavbarText >Hello, {window.localStorage.getItem('username')}&nbsp;&nbsp;</NavbarText>
+        <NavbarText>(Logout)</NavbarText>
+      </Collapse>
     </Navbar>
   )
 }
