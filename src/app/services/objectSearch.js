@@ -1,5 +1,8 @@
 import axios from 'axios'
-const url = 'http://localhost:3001/api/objects/name'
+import token from './auth/token'
+import api from './auth/apiHost'
+const url = `${api}/object/find`
+// const url = 'http://localhost:3001/api/objects/name'
 
 const searchTest = (name) => {
   const request = axios.get(`${url}/${name.name}`)
@@ -9,7 +12,7 @@ const searchTest = (name) => {
 }
 
 const search = params => {
-  const request = axios.post(url, params)
+  const request = axios.post(url, params, token)
   return request.then(response => response.data)
 }
 

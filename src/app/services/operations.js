@@ -1,13 +1,10 @@
 import axios from 'axios'
-const url = 'http://192.168.0.104:5000/api/operations'
-
-const setToken = newToken => {
-  return `bearer ${newToken.token}`
-}
+import token from './auth/token'
+import api from './auth/apiHost'
+const url = `${api}/operations`
 
 const getAll = () => {
-  
-  const request = axios.get(url, {}, { "auth": setToken(window.localStorage.getItem('loggedUser'))})
+  const request = axios.get(url, token)
   return request.then(response => response.data.operations)
 }
 

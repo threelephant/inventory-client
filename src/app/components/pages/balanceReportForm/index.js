@@ -68,6 +68,9 @@ const PlaceSearchForm = () => {
       .then(divisionsLocal => {
         setDivisions(divisionsLocal)
       })
+      .catch(() => {
+
+      })
   }, [])
 
   useEffect(() => {
@@ -75,6 +78,9 @@ const PlaceSearchForm = () => {
       .getEnglish()
       .then(divisionsEnglishLocal => {
         setDivisionsEnglish(divisionsEnglishLocal)
+      })
+      .catch(() => {
+
       })
   }, [])
 
@@ -106,8 +112,6 @@ const PlaceSearchForm = () => {
   const handlePlacementChange = (event) => {
     setPlacementSearch(event.target.value.toLowerCase())
   }
-
-  console.log(response)
 
   return (
     <Form>

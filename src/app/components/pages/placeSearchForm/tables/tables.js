@@ -90,6 +90,9 @@ const PlacementTable = (props) => {
       .then(placementsLocal => {
         setPlacements(placementsLocal)
       })
+      .catch(() => {
+        
+      })
   }, [props.division])
 
   return (

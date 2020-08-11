@@ -17,6 +17,9 @@ const PlaceSearchForm = () => {
       .then(divisionsLocal => {
         setDivisions(divisionsLocal)
       })
+      .catch(() => {
+
+      })
   }, [])
 
   useEffect(() => {
@@ -24,6 +27,9 @@ const PlaceSearchForm = () => {
       .getEnglish()
       .then(divisionsEnglishLocal => {
         setDivisionsEnglish(divisionsEnglishLocal)
+      })
+      .catch(() => {
+        
       })
   }, [])
 

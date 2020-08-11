@@ -1,8 +1,10 @@
 import axios from 'axios'
-const url = 'http://localhost:3001/api/division'
+import token from './auth/token'
+import api from './auth/apiHost'
+const url = `${api}/divisions`
 
 const get = () => {
-  const request = axios.get(url)
+  const request = axios.get(url, token)
   return request.then(response => response.data)
 }
 

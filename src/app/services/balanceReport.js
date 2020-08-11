@@ -1,8 +1,10 @@
 import axios from 'axios'
-const url = 'http://localhost:3001/api/report_balance'
+import token from './auth/token'
+import apiHost from './auth/apiHost'
+const url = `${apiHost}/report_balance`
 
 const get = () => {
-  const request = axios.get(url)
+  const request = axios.get(url, token)
   return request.then(response => response.data)
 }
 

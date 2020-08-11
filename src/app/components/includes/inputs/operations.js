@@ -19,6 +19,9 @@ const Operation = (props) => {
         )
         setOperationsList(operationListOptions)
       })
+      .catch(() => {
+        
+      })
   }, [])
 
   let operationElement = operationsList.length === 0 ? <Loading /> :

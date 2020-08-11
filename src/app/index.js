@@ -12,6 +12,26 @@ import AddPlace from './components/pages/addPlace/addPlace'
 import PlugPage from './components/pages/plug'
 import ErrorPage from './components/pages/404'
 
+const Pages = () => {
+  return (
+    <div>
+      <Route exact path="/report" render={() => <PlugPage type="report" />} />
+      <Route path="/report/balance" render={() => <BalanceReport />} />
+      <Route path="/report/motion" render={() => <MotionReport />} />
+
+      <Route exact path="/place" render={() => <AddPlace />} />
+
+      <Route exact path="/search" render={() => <PlugPage type="search" />} />
+      <Route path="/search/place" render={() => <PlaceSearch />} />
+      <Route path="/search/object" render={() => <ObjectSearchPage />} />
+
+      <Route exact path="/inventory" render={() => <PlugPage type="inventory" />} />
+      <Route path="/inventory/add" render={() => <AddInventory />} />
+      <Route path="/inventory/change" render={() => <ChangeInventory />} />
+    </div>
+  )
+}
+
 const App = () => {
   return (
     <div>
@@ -22,19 +42,9 @@ const App = () => {
           <Route path="/login" render={() => <Auth type="login" />} />
           <Route path="/register" render={() => <Auth type="register" />} />
 
-          <Route exact path="/report" render={() => <PlugPage type="report" />} />
-          <Route path="/report/balance" render={() => <BalanceReport />} />
-          <Route path="/report/motion" render={() => <MotionReport />} />
+          {window.localStorage.getItem('loggedUser') ? <Pages /> : <div />}
 
-          <Route exact path="/place" render={() => <AddPlace />} />
-
-          <Route exact path="/search" render={() => <PlugPage type="search" />} />
-          <Route path="/search/place" render={() => <PlaceSearch />} />
-          <Route path="/search/object" render={() => <ObjectSearchPage />} />
-
-          <Route exact path="/inventory" render={() => <PlugPage type="inventory" />} />
-          <Route path="/inventory/add" render={() => <AddInventory />} />
-          <Route path="/inventory/change" render={() => <ChangeInventory />} />
+          <Pages />
           <Route render={() => <ErrorPage />} />
         </Switch>
       </Router>

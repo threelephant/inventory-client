@@ -1,8 +1,10 @@
 import axios from 'axios'
-const url = 'http://localhost:3001/api/object'
+import token from './auth/token'
+import api from './auth/apiHost'
+const url = `${api}/object`
 
 const create = newObject => {
-  const request = axios.post(url, newObject)
+  const request = axios.post(url, newObject, token)
   return request.then(response => response.data)
 }
 
