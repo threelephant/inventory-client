@@ -45,6 +45,8 @@ const InventoryForm = () => {
     }))
   }
 
+  console.log(item)
+
   const reset = () => {
     setItem({ operation: "Приход" })
     document.querySelector('form').reset()
@@ -63,13 +65,8 @@ const InventoryForm = () => {
       return
     }
 
-    const newItem = {
-      ...item,
-      date: new Date()
-    }
-
     inventoryService
-      .create(newItem)
+      .create(item)
       .then(response => {
         setSuccess(1)
         reset()

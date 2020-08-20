@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Form } from 'reactstrap'
-import { Login, Password, ButtonSubmit, FormHeaders } from '../../includes/auth/form-elements'
+import { Alert, ButtonGroup, Form } from 'reactstrap'
+import { Login, Password, ButtonSubmit, FormHeaders, ButtonLogin } from '../../includes/auth/form-elements'
 import loginService from '../../../services/loginService'
 
 const FormRegisterBody = () => {
   const [item, setItem] = useState({})
+  const [isNotOk, setIsNotOk] = useState(false)
 
   const handleChange = e => {
     const { name, value } = e.target
@@ -24,21 +25,25 @@ const FormRegisterBody = () => {
         window.location = '/login'
       })
       .catch((response) => {
-        console.log(response)
+        setIsNotOk(true)
       })
       .finally(() => {
-
+        setTimeout(() => {
+          setIsNotOk(false)
+        }, 4000)
       })
   }
-
-  console.log(item)
 
   return (
     <Form>
       <Login setUsername={handleChange} />
       <Password setPassword={handleChange} label="Пароль" name="password" />
       <Password setPassword={handleChange} label="Повторите пароль" name="confirm_password" />
-      <ButtonSubmit title="Регистрация" onClick={handleLogin} />
+      <ButtonGroup>
+        <ButtonSubmit title="Регистрация" onClick={handleLogin} />
+        <ButtonLogin />
+      </ButtonGroup>
+      {isNotOk ? <Alert color="danger" className="mt-4">Регистрация невозможна</Alert> : <div />}
     </Form>
   )
 }

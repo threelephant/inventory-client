@@ -3,9 +3,9 @@ import { Row, Col } from 'reactstrap'
 import services from '../../../../services/division'
 import { DivisionTable, PlacementTable } from './tables/tables'
 
+
 const PlaceSearchForm = ({ setDiv, setPlace, chosenDivision, setChosenDivision }) => {
   const [divisions, setDivisions] = useState([])
-  const [divisionsEnglish, setDivisionsEnglish] = useState({})
 
   useEffect(() => {
     services
@@ -18,20 +18,8 @@ const PlaceSearchForm = ({ setDiv, setPlace, chosenDivision, setChosenDivision }
       })
   }, [])
 
-  useEffect(() => {
-    services
-      .getEnglish()
-      .then(divisionsEnglishLocal => {
-        setDivisionsEnglish(divisionsEnglishLocal)
-      })
-      .catch(() => {
-        
-      })
-  }, [])
-
   const setDivision = (division) => {
-    const divEnglish = divisionsEnglish[division]
-    setChosenDivision(divEnglish)
+    setChosenDivision(division)
 
     setPlace(prevItem =>
       Object.keys(prevItem)
@@ -66,7 +54,6 @@ const PlaceSearchForm = ({ setDiv, setPlace, chosenDivision, setChosenDivision }
       <Col>
         <PlacementTable
           division={chosenDivision}
-          divisionsEnglish={divisionsEnglish}
           setPlacement={setPlacement}
         />
       </Col>

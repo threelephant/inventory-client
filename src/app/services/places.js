@@ -10,7 +10,6 @@ const createDivision = (newObject) => {
 }
 
 const createPlacement = (newObject) => {
-  newObject.division = 'd1fc87f0-fe78-44b1-aaaf-9731152c862d'
   const request = axios.post(urlPlace, newObject, token)
   return request.then(response => response.data)
 }

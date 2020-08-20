@@ -1,7 +1,7 @@
 import axios from 'axios'
 import token from './auth/token'
 import api from './auth/apiHost'
-const url = `${api}/divisions`
+const url = `${api}/division`
 
 const get = () => {
   const request = axios.get(url, token)

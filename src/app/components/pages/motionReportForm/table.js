@@ -9,8 +9,8 @@ const ReportTable = ({ response }) => {
         <tr key={`${index}`}>
           <td>{obj["date_operation"]}</td>
           <td>{obj["operation"]}</td>
-          <td>{obj["previous_placement"]}</td>
           <td>{obj["placement"]}</td>
+          <td>{obj["previous_placement"]}</td>
           <td>{obj["movement"]}</td>
           <td>{obj["movement_info"]}</td>
         </tr>

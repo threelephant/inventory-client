@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Form, Row, Col } from 'reactstrap'
-import Operations from '../../includes/inputs/operations'
 import { Number, Dates } from './inputs'
 import Buttons from './buttons'
 import Message from '../../includes/inputs/alerts'
@@ -9,7 +8,7 @@ import services from '../../../services/motionReport'
 import Valid from './utils/validation'
 
 const MotionReportForm = () => {
-  const [item, setItem] = useState({ operation: "Списание" })
+  const [item, setItem] = useState()
   const [response, setResponse] = useState({})
   const [success, setSuccess] = useState(-1)
   const [errorMessage, setErrorMessage] = useState([])
@@ -25,7 +24,7 @@ const MotionReportForm = () => {
   }
 
   const reset = () => {
-    setItem({ operation: "Списание" })
+    setItem({})
     document.querySelector('form').reset()
     setErrorMessage([])
     setResponse([])
@@ -43,10 +42,11 @@ const MotionReportForm = () => {
     services
       .send(item)
       .then(response => {
-        // setResponse(response)
+        setResponse(response)
         setSuccess(1)
         setErrorMessage([])
-        setItem({ operation: "Списание" })
+        setItem({})
+        document.querySelector('form').reset()
       })
       .catch(reason => {
         setSuccess(0)
@@ -55,16 +55,6 @@ const MotionReportForm = () => {
         setTimeout(() => {
           setSuccess(-1)
         }, 4000)
-      })
-
-    services
-      .resTest()
-      .then(response => {
-        setResponse(response)
-      })
-      .catch(reason => {
-      })
-      .finally(onfinally => {
       })
   }
 
@@ -83,7 +73,6 @@ const MotionReportForm = () => {
           <Col md={{ size: 5, offset: 1, order: 1 }}>
             <Number onChange={handleChange} />
             <Dates onChange={handleChange} />
-            <Operations onChange={handleChange} />
             <Buttons
               onSubmit={onSubmit}
               onReset={reset}

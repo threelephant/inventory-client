@@ -39,7 +39,7 @@ const DivisionTable = (props) => {
     }))
   }
 
-  const divisionElems = divisions.map((division, key) =>
+  const divisionElems = divisions.length !== 0 ? divisions.map((division, key) =>
     <tr
       key={key}
       id={`division` + key}
@@ -50,7 +50,7 @@ const DivisionTable = (props) => {
         {division}
       </td>
     </tr>
-  )
+  ) : []
 
   return (
     <Table id="division_table" hover bordered size="sm">

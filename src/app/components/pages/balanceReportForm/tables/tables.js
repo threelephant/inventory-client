@@ -23,9 +23,9 @@ const DivisionTable = (props) => {
     props.setDivision(division)
   }
 
-  const filteredDivisions = props.divisions.filter(division => 
+  const filteredDivisions = props.divisions.length !== 0 ? props.divisions.filter(division => 
     division.toLowerCase().includes(props.searched)  
-  )
+  ) : []
 
   const divisionElems = filteredDivisions.map((division, key) =>
     <tr

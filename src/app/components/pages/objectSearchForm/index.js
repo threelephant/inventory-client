@@ -21,7 +21,7 @@ const ObjectSearchForm = () => {
     e.preventDefault()
 
     services
-      .searchTest(item)
+      .search(item)
       .then(response => {
         setResponse(response)
       })

@@ -15,8 +15,8 @@ const Auth = ({ type }) => {
 
   return (
     <Container>
-      <Row>
-        <Col sm="12" md={{ size: 6, offset: 3 }}>
+      <Row className="mt-4">
+        <Col sm="12" md={{ size: 6, offset: 1 }}>
           {form}
         </Col>
       </Row>

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import token from './auth/token'
 import api from './auth/apiHost'
-const url = `${api}/object`
+const url = `${api}/object/new`
 
 const create = newObject => {
   const request = axios.post(url, newObject, token)

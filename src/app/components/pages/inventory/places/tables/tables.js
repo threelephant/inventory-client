@@ -15,7 +15,7 @@ const DivisionTable = (props) => {
     props.setDivision(division)
   }
 
-  const divisionElems = props.divisions.map((division, key) =>
+  const divisionElems = props.divisions.length !== 0 ? props.divisions.map((division, key) =>
     <tr
       key={key}
       id={`division${key}`}
@@ -26,7 +26,7 @@ const DivisionTable = (props) => {
         {division}
       </td>
     </tr>
-  )
+  ) : []
 
   return (
     <Table id="division_table" hover bordered size="sm">
@@ -74,6 +74,9 @@ const PlacementTable = (props) => {
       .get(props.division)
       .then(placementsLocal => {
         setPlacements(placementsLocal)
+      })
+      .catch(() => {
+
       })
   }, [props.division])
 

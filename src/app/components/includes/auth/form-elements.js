@@ -25,6 +25,18 @@ const ButtonSubmit = ({ title, onClick }) => {
   )
 }
 
+const ButtonRegister = () => {
+  return (
+    <Button href="/register">Регистрация нового пользователя</Button>
+  )
+}
+
+const ButtonLogin = () => {
+  return (
+    <Button href="/login">Войти под существующим логином</Button>
+  )
+}
+
 const FormHeaders = ({ formTitle }) => {
   return (
     <div>
@@ -34,4 +46,4 @@ const FormHeaders = ({ formTitle }) => {
   )
 }
 
-export { Login, Password, ButtonSubmit, FormHeaders }
+export { Login, Password, ButtonSubmit, FormHeaders, ButtonRegister, ButtonLogin }

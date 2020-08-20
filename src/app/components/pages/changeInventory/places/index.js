@@ -5,7 +5,6 @@ import { DivisionTable, PlacementTable } from './tables/tables'
 
 const PlaceSearchForm = ({ setDiv, setPlace, chosenDivision, setChosenDivision }) => {
   const [divisions, setDivisions] = useState([])
-  const [divisionsEnglish, setDivisionsEnglish] = useState({})
 
   useEffect(() => {
     services
@@ -18,19 +17,8 @@ const PlaceSearchForm = ({ setDiv, setPlace, chosenDivision, setChosenDivision }
       })
   }, [])
 
-  useEffect(() => {
-    services
-      .getEnglish()
-      .then(divisionsEnglishLocal => {
-        setDivisionsEnglish(divisionsEnglishLocal)
-      })
-      .catch(() => {
-        
-      })
-  }, [])
-
   const setDivision = (division) => {
-    setChosenDivision(divisionsEnglish[division])
+    setChosenDivision(division)
     setPlace("")
     setDiv(division)
   }
@@ -46,7 +34,6 @@ const PlaceSearchForm = ({ setDiv, setPlace, chosenDivision, setChosenDivision }
       <Col>
         <PlacementTable
           division={chosenDivision}
-          divisionsEnglish={divisionsEnglish}
           setPlacement={setPlace}
         />
       </Col>

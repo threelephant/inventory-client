@@ -3,8 +3,10 @@ import { Table } from 'reactstrap'
 
 const ReportTable = ({ response }) => {
 
+  console.log("in tables", response)
+
   if (Object.keys(response).length !== 0) {
-    const tableResult = response.material_objects.map((obj, index) => {
+    const tableResult = response['material_objects'].map((obj, index) => {
       return (
         <tr key={`${index}`}>
           <td>{obj["object_id"]}</td>

@@ -7,7 +7,6 @@ import { DivisionTable, PlacementTable } from './tables/tables'
 const PlaceSearchForm = () => {
   const [divisions, setDivisions] = useState([])
   const [chosenDivision, setChosenDivision] = useState('')
-  const [divisionsEnglish, setDivisionsEnglish] = useState({})
   const [divisionSearch, setDivisionSearch] = useState('')
   const [placementSearch, setPlacementSearch] = useState('')
 
@@ -22,20 +21,8 @@ const PlaceSearchForm = () => {
       })
   }, [])
 
-  useEffect(() => {
-    services
-      .getEnglish()
-      .then(divisionsEnglishLocal => {
-        setDivisionsEnglish(divisionsEnglishLocal)
-      })
-      .catch(() => {
-        
-      })
-  }, [])
-
   const setDivision = (division) => {
-    const divEnglish = divisionsEnglish[division]
-    setChosenDivision(divEnglish)
+    setChosenDivision(division)
   }
 
   const handleDivisionChange = (event) => {
@@ -60,7 +47,6 @@ const PlaceSearchForm = () => {
           />
           <PlacementTable
             division={chosenDivision}
-            divisionsEnglish={divisionsEnglish}
             searched={placementSearch}
           />
         </Col>

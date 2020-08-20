@@ -15,6 +15,8 @@ import ErrorPage from './components/pages/404'
 const Pages = () => {
   return (
     <div>
+      <Route exact path="/" render={() => <MainPage />} />
+
       <Route exact path="/report" render={() => <PlugPage type="report" />} />
       <Route path="/report/balance" render={() => <BalanceReport />} />
       <Route path="/report/motion" render={() => <MotionReport />} />
@@ -33,18 +35,24 @@ const Pages = () => {
 }
 
 const App = () => {
+  const IsLogged = () => {
+    if (window.localStorage.getItem('loggedUser')) {
+      return <Pages />
+    } else {
+      window.location = '/login'
+      return <div />
+    }
+  }
+
   return (
     <div>
       <Router>
         <Switch>
-          <Route exact path="/" render={() => <MainPage />} />
-
           <Route path="/login" render={() => <Auth type="login" />} />
           <Route path="/register" render={() => <Auth type="register" />} />
 
-          {window.localStorage.getItem('loggedUser') ? <Pages /> : <div />}
+          <IsLogged />
 
-          <Pages />
           <Route render={() => <ErrorPage />} />
         </Switch>
       </Router>

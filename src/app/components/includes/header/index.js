@@ -7,6 +7,7 @@ import {
   DropdownInventory,
   DropdownReports, DropdownSearch
 } from './dropdowns'
+import Logout from './logout'
 
 const NavbarLinks = () => {
   return (
@@ -33,8 +34,10 @@ const Header = () => {
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar >
         <NavbarLinks />
-        <NavbarText >Hello, {window.localStorage.getItem('username')}&nbsp;&nbsp;</NavbarText>
-        <NavbarText>(Logout)</NavbarText>
+        <a href="/login" onClick={Logout}>
+          <NavbarText >Hello, {window.localStorage.getItem('username')}&nbsp;&nbsp;</NavbarText>
+          <NavbarText>(Logout)</NavbarText>
+        </a>
       </Collapse>
     </Navbar>
   )

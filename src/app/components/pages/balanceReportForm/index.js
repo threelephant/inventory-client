@@ -12,11 +12,12 @@ const PlaceSearchForm = () => {
   const [response, setResponse] = useState({})
   const [divisions, setDivisions] = useState([])
   const [chosenDivision, setChosenDivision] = useState('')
-  const [divisionsEnglish, setDivisionsEnglish] = useState({})
   const [divisionSearch, setDivisionSearch] = useState('')
   const [placementSearch, setPlacementSearch] = useState('')
   const [isDivisionSearchDisabled, setIsDivisionSearchDisabled] = useState(false)
   const [isPlacementSearchDisabled, setIsPlacementSearchDisabled] = useState(false)
+
+  console.log(item)
 
   const setPlaceName = (name) => {
     const setPlaceValue = (value) => {
@@ -73,21 +74,9 @@ const PlaceSearchForm = () => {
       })
   }, [])
 
-  useEffect(() => {
-    servicesDivision
-      .getEnglish()
-      .then(divisionsEnglishLocal => {
-        setDivisionsEnglish(divisionsEnglishLocal)
-      })
-      .catch(() => {
-
-      })
-  }, [])
-
   const setDivision = (division) => {
     setIsDivisionSearchDisabled(true)
     setIsPlacementSearchDisabled(false)
-    const divEnglish = divisionsEnglish[division]
     setPlaceName("division")(division)
     setItem(prevItem => 
       Object.keys(prevItem)
@@ -97,7 +86,7 @@ const PlaceSearchForm = () => {
           return result
         }, {})
     )
-    setChosenDivision(divEnglish)
+    setChosenDivision(division)
   }
 
   const setPlacement = (placement) => {
@@ -127,7 +116,6 @@ const PlaceSearchForm = () => {
           />
           <PlacementTable
             division={chosenDivision}
-            divisionsEnglish={divisionsEnglish}
             searched={placementSearch}
             setPlacement={setPlacement}
           />

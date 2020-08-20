@@ -13,7 +13,7 @@ const searchTest = (name) => {
 
 const search = params => {
   const request = axios.post(url, params, token)
-  return request.then(response => response.data)
+  return request.then(response => {console.log("HLOL", response.data); return response.data})
 }
 
 export default { search, searchTest }
